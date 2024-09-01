@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo .med {
+    color: #85c1e9;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.login-button {
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-logo {
+    margin: 0;
+    height: 300px;
+}
+
+.bg-img{
+    align-items:inherit;
+    height: 10%;
+}
+
+h1 {
+    font-size: 58px;
+
+}
+
+.med {
+    color: #85c1e9;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
