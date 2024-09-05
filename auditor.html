@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaRe - Auditor Dashboard</title>
+    <link rel="stylesheet" href="auditorhomestyle.css">
+        
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Images/Brian.png" alt="CaRe Logo">
+                <span>CaRe <span class="med">MED</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Therapist</a></li>
+                <li><a href="#">Auditor</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <button class="login-button">Logout</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Auditor Dashboard</h1>
+            <p>Select a therapist to review their performance data and download records.</p>
+            <div class="therapist-list">
+                <div class="therapist-item">
+                    <h3><a href="Database/therapist1.html">Therapist 1</a></h3>
+                <p>Number of Patients: 20</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist2.html">Therapist 2</a></h3>
+                <p>Number of Patients: 15</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist3.html">Therapist 3</a></h3>
+                <p>Number of Patients: 25</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist4.html">Therapist 4</a></h3>
+                <p>Number of Patients: 18</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist5.html">Therapist 5</a></h3>
+                <p>Number of Patients: 22</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist6.html">Therapist 6</a></h3>
+                <p>Number of Patients: 30</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist7.html">Therapist 7</a></h3>
+                <p>Number of Patients: 10</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist8.html">Therapist 8</a></h3>
+                <p>Number of Patients: 19</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist9.html">Therapist 9</a></h3>
+                <p>Number of Patients: 12</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist10.html">Therapist 10</a></h3>
+                <p>Number of Patients: 21</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist11.html">Therapist 11</a></h3>
+                <p>Number of Patients: 14</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist12.html">Therapist 12</a></h3>
+                <p>Number of Patients: 13</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+            <div class="therapist-item">
+                <h3><a href="Database/therapist13.html">Therapist 13</a></h3>
+                <p>Number of Patients: 16</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div><div class="therapist-item">
+                <h3><a href="Database/therapist14.html">Therapist 14</a></h3>
+                <p>Number of Patients: 17</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div><div class="therapist-item">
+                <h3><a href="Database/therapist15.html">Therapist 15</a></h3>
+                <p>Number of Patients: 28</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div><div class="therapist-item">
+                <h3><a href="Database/therapist16.html">Therapist 16</a></h3>
+                <p>Number of Patients: 24</p>
+                
+                <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+            </div>
+
+              
+            </div>
+        </div>
+    </main>
+    <script>
+        function confirmDownload() {
+            if (confirm("Do you want to download the records as a PDF?")) {
+                alert("Records downloaded successfully.");
+            }
+        }
+    </script>
+</body>
+</html>
