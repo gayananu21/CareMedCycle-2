@@ -32,7 +32,7 @@ html,body {
     transform: translateY(100px);
   }
 
-
+  /* Start of Navigation bar css*/
 header {
     background-color: white;
     padding: 10px 20px;
@@ -115,7 +115,8 @@ nav {
     background-color: #19232b;
     color: white;
   }
-  
+
+  /* End of Navigation bar css*/
 
 .hero {
     text-align: center;
