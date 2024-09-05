@@ -147,15 +147,31 @@ hero-right {
     transition: transform 0.3s,height 20%;
 }
 
-.brianlogo:hover{
-    transform-origin: left top;
-    animation: scale 2000ms ease-in-out backwards ;
+
+.brianlogo{
+    transform-origin:center;
+    animation: scale 2000ms ease-in-out forwards ;
 }
+
+@keyframes scale {
+    to {
+      transform: scale(1.0);
+    } 
+}
+
+.brianlogo:hover{
+    transform-origin:center;
+    animation: scale 2000ms ease-in-out forwards ;
+}
+
 @keyframes scale {
     to {
       transform: scale(1.2);
-    }
+    } 
 }
+
+
+
 
 h1 {
     font-size: 58px;
