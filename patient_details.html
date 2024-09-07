@@ -30,8 +30,27 @@
     </div>
 
     <!-- Patient Details Section -->
-    <div id="patient-details" class="patient-details">
-        <!-- Patient information will be inserted here dynamically -->
+    <div class="patient-details-container">
+        <div class="patient-profile">
+            <img id="patient-avatar" src="Images/default-avatar.png" alt="Patient Avatar">
+            <h1 id="patient-name">Patient Name</h1>
+        </div>
+
+        <div class="patient-info">
+            <h2>Patient Details</h2>
+            <p><strong>Eating Habits:</strong> <span id="eating-habits">--</span></p>
+            <p><strong>Sleeping Schedule:</strong> <span id="sleeping-schedule">--</span></p>
+            <p><strong>Weight:</strong> <span id="weight">--</span></p>
+            <p><strong>State of Mind:</strong> <span id="state-of-mind">--</span></p>
+            <p><strong>Other:</strong> <span id="other-info">--</span></p>
+        </div>
+
+        <div class="patient-notes">
+            <h2>Patient Notes</h2>
+            <div id="notes-grid" class="notes-grid">
+                <!-- Notes will be dynamically inserted here -->
+            </div>
+        </div>
     </div>
 
     <!-- Link the external JavaScript file -->
