@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Records</title>
+    <style>
+        /* Basic styling for the container, headers, and patient details */
+        .container {
+            width: 70%;
+            margin: 0 auto;
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .patient-details {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .patient-notes {
+            margin-top: 30px;
+        }
+
+        .note-card {
+            background-color: #fff;
+            padding: 15px;
+            margin-right: 10px;
+            display: inline-block;
+            width: 30%;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            vertical-align: top;
+        }
+
+        .add-note-button {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .note-card .edit-icon {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- This is where multiple patients will be injected dynamically -->
+    <div id="patients-container"></div>
+
+    <script src="scripts/patientRecords.js"></script>
+</body>
+</html>
