@@ -1,6 +1,7 @@
 {
     "patients": [
         {
+            "id": 1,
             "name": "Patient 1",
             "avatar": "images/patientImages/patient1.png",
             "details": {
@@ -24,6 +25,7 @@
             ]
         },
         {
+            "id": 2,
             "name": "Patient 2",
             "avatar": "images/patientImages/patient2.png",
             "details": {
@@ -47,6 +49,7 @@
             ]
         },
         {
+            "id": 3,
             "name": "Patient 3",
             "avatar": "images/patientImages/patient3.png",
             "details": {
@@ -70,8 +73,9 @@
             ]
         },
         {
+            "id": 4,
             "name": "Patient 4",
-            "avatar": "images/patientImages/patient4.jpeg",
+            "avatar": "images/patientImages/patient4.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
                 "sleepingSchedule": "7 Hours",
@@ -88,8 +92,9 @@
             ]
         },
         {
+            "id": 5,
             "name": "Patient 5",
-            "avatar": "images/patientImages/patient10.jpeg",
+            "avatar": "images/patientImages/patient5.png",
             "details": {
                 "eatingHabits": "2 Meals, Snacks",
                 "sleepingSchedule": "5 Hours",
@@ -106,8 +111,9 @@
             ]
         },
         {
+            "id": 6,
             "name": "Patient 6",
-            "avatar": "images/patientImages/patient6.jpeg",
+            "avatar": "images/patientImages/patient6.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
                 "sleepingSchedule": "9 Hours",
@@ -124,8 +130,9 @@
             ]
         },
         {
+            "id": 7,
             "name": "Patient 7",
-            "avatar": "images/patientImages/patient7.jpeg",
+            "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
                 "sleepingSchedule": "7 Hours",
@@ -142,6 +149,7 @@
             ]
         },
         {
+            "id": 8,
             "name": "Patient 8",
             "avatar": "images/patientImages/patient8.png",
             "details": {
@@ -160,8 +168,9 @@
             ]
         },
         {
+            "id": 9,
             "name": "Patient 9",
-            "avatar": "images/patientImages/patient2.png",
+            "avatar": "images/patientImages/patient9.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
                 "sleepingSchedule": "8 Hours",
@@ -178,8 +187,9 @@
             ]
         },
         {
+            "id": 10,
             "name": "Patient 10",
-            "avatar": "images/patientImages/patient10.jpeg",
+            "avatar": "images/patientImages/patient10.png",
             "details": {
                 "eatingHabits": "2 Meals per day",
                 "sleepingSchedule": "7 Hours",
@@ -196,8 +206,9 @@
             ]
         },
         {
+            "id": 11,
             "name": "Patient 11",
-            "avatar": "images/patientImages/patient11.webp",
+            "avatar": "images/patientImages/patient11.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
                 "sleepingSchedule": "7 Hours",
@@ -214,6 +225,7 @@
             ]
         },
         {
+            "id": 12,
             "name": "Patient 12",
             "avatar": "images/patientImages/patient12.png",
             "details": {

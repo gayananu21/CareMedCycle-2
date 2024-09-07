@@ -1,5 +1,5 @@
 // Fetch the patient data from JSON file
-fetch('jsonFiles/patientRecords.json')
+fetch('jsonFiles/patient_records.json')
     .then(response => response.json())
     .then(data => {
         const patientsGrid = document.getElementById('patients-grid');
@@ -19,12 +19,17 @@ fetch('jsonFiles/patientRecords.json')
             const patientName = document.createElement('h3');
             patientName.textContent = patient.name;
 
+            // Create a link to patient details using their unique ID
+            const patientLink = document.createElement('a');
+            patientLink.href = `patient_details.html?id=${patient.id}`;
+            patientLink.appendChild(patientCard);
+
             // Append image and name to the card
             patientCard.appendChild(patientImg);
             patientCard.appendChild(patientName);
 
-            // Append the patient card to the grid
-            patientsGrid.appendChild(patientCard);
+            // Append the link (wrapped card) to the grid
+            patientsGrid.appendChild(patientLink);
         });
     })
     .catch(error => {

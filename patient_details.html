@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaRe Med - Therapist Dashboard</title>
-    <link rel="stylesheet" href="styles/therapist_home.css">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="styles/patient_details.css">
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
         <div class="logo">
-            <img src="Images\Brian.png" alt="Care Med Logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
             <span class="care">CARE <span class="med">MED</span></span>
         </div>
         <div class="nav-links">
@@ -24,22 +25,16 @@
             </div>
         </div>
         <div class="profile-icon">
-            <img src="images/profile-icon.png" alt="Profile">
+            <img src="Images/profile-icon.png" alt="Profile">
         </div>
     </div>
 
-    <div class="welcome-section">
-        <h1>Welcome<br><span>"Lisa Firestone"</span></h1>
-        <p>Recently Treated Patients</p>
+    <!-- Patient Details Section -->
+    <div id="patient-details" class="patient-details">
+        <!-- Patient information will be inserted here dynamically -->
     </div>
 
-    <div class="patients-grid">
-        <div class="patient">Patient 1</div>
-        <div class="patient">Patient 5</div>
-        <div class="patient">Patient 6</div>
-        <div class="patient">Patient 4</div>
-        <div class="patient">Patient 2</div>
-        <div class="patient">Patient 3</div>
-    </div>
+    <!-- Link the external JavaScript file -->
+    <script src="scripts/patient_details.js"></script>
 </body>
 </html>
