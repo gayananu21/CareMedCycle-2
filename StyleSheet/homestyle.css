@@ -1,38 +1,5 @@
+/* Additional styling for the page */
 
-html,body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    overflow: hidden;
-}
-
-.transition-fade {
-    opacity: 1;
-    transition: 500ms;
-    transform: translateX(0);
-    transform-origin: left;
-  }
-  
-  html.is-animating .transition-fade {
-    opacity: 1;
-    transform: translateX(100%);
-  }
-  
-  html.is-leaving .transition-fade {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  
-  .transition-swipe {
-    transition: 500ms;
-    transform: translateY(0);
-  }
-  
-  html.is-animating .transition-swipe {
-    transform: translateY(100px);
-  }
-
-  /* Start of Navigation bar css*/
 header {
     background-color: white;
     padding: 10px 20px;
@@ -120,82 +87,62 @@ nav {
 
 .hero {
     text-align: center;
-    padding: 0px 20px;
+    margin-top: 50px;
 }
-
-.hero-logo {
-    height: 190px;
-}
-
-hero-right {
-    height: 190px;
-    align-items: right ;
-}
-
-.brianlogo {
-    width: 300px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.bg-img{
-    height: 10%;
-    margin: 0;
-
-    transition: transform 0.3s,height 20%;
-}
-
-
-.brianlogo:hover{
-    transform-origin:center;
-    animation: scale 2000ms ease-in-out forwards ;
-}
-
-@keyframes scale {
-    to {
-      transform: scale(1.2);
-    } 
-}
-
 
 h1 {
-    font-size: 58px;
-    margin-top: 0;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-.med {
-    color: #85c1e9;
+.question-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-p {
-    font-size: 12px;
-    color: #666;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px;
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 .cta-button {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.5em 1.5rem;
-    color: white;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
     background-color: #85c1e9;
-    border: 10 px solid var(--clr-accent);
-    border-radius: 15px;
-
-    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.cta-button:hover{
+.cta-button:hover {
+    background-color: #6da6d6;
     transform: translateY(-4px);
-    background-color: #cad3da ;
-    color: black;
 }
+
+/* For mobile responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        padding: 8px 30px;
+        font-size: 16px;
+    }
+}
+
 
 .animatedbutton{
     color: var(--clr-accent);
@@ -211,3 +158,23 @@ p {
 .animatedbutton:hover{
     transform: translateX(-5px);
 }
+
+.imageBox {
+    position: relative;
+    float: right;
+  }
+
+  .imageBox .hoverImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+
+  .imageBox:hover .hoverImg {
+    display: block;
+  }
+
+  .imageBox:hover .hoverImg {
+      display: block;
+  }
