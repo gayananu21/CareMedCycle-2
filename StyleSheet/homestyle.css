@@ -1,6 +1,39 @@
 /* Additional styling for the page */
 
-header {
+html,body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  
+  html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  
+  .transition-swipe {
+    transition: 500ms;
+    transform: translateY(0);
+  }
+  
+  html.is-animating .transition-swipe {
+    transform: translateY(100px);
+  }
+  /* Start of Navigation bar css*/
+  header {
     background-color: white;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -114,7 +147,6 @@ h2 {
     justify-content: center;
     gap: 20px;
 }
-
 .cta-button {
     padding: 10px 40px;
     font-size: 18px;
@@ -124,23 +156,61 @@ h2 {
     color: white;
     border: none;
     cursor: pointer;
+    text-align: center;
+    position: relative; /* Ensure that the pseudo-elements are positioned correctly */
+ /* Set a fixed width to avoid resizing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
 }
 
-.cta-button:hover {
-    background-color: #6da6d6;
-    transform: translateY(-4px);
+.cta-button:hover::after {
+    content: "Great 😊"; /* Text to display when hovered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #85c1e9;
+    border-radius: 10px;
+    padding: 10px 40px;
+    white-space: nowrap; /* Ensure that the new text stays on one line */
 }
 
-/* For mobile responsiveness */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 32px;
-    }
+.cta-buttonokay {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative; /* Ensure that the pseudo-elements are positioned correctly */
+ /* Set a fixed width to avoid resizing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: box-shadow 0.3s ease-in-out
+}
 
-    .cta-button {
-        padding: 8px 30px;
-        font-size: 16px;
-    }
+.cta-buttonokay:hover::after {
+    content: "Okay 😕"; /* Text to display when hovered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #85c1e9;
+    border-radius: 10px;
+    padding: 10px 40px;
+    white-space: nowrap; /* Ensure that the new text stays on one line */
+}
+
+.cta-button:hover .button-text {
+    visibility: hidden; /* Hide the original text on hover */
 }
 
 
@@ -158,23 +228,3 @@ h2 {
 .animatedbutton:hover{
     transform: translateX(-5px);
 }
-
-.imageBox {
-    position: relative;
-    float: right;
-  }
-
-  .imageBox .hoverImg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
-  }
-
-  .imageBox:hover .hoverImg {
-    display: block;
-  }
-
-  .imageBox:hover .hoverImg {
-      display: block;
-  }
