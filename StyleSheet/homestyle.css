@@ -1,0 +1,230 @@
+/* Additional styling for the page */
+
+html,body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  
+  html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  
+  .transition-swipe {
+    transition: 500ms;
+    transform: translateY(0);
+  }
+  
+  html.is-animating .transition-swipe {
+    transform: translateY(100px);
+  }
+  /* Start of Navigation bar css*/
+  header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevents the header from shrinking */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo .med {
+    color: #85c1e9;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    border: 0px solid #04AA6D ;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 16px;
+    color: var(--clr-accent);
+    background-color: var(--clr-rgba);
+    border: 10 px solid var(--clr-accent);
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+
+
+.nav-links a:hover {
+    background-color: #e9e9e9;
+    color: rgb(0, 0, 0);
+    transform: translateY(-10px);
+  }
+  
+
+.login-button {
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #19232b;
+    color: white;
+  }
+
+  /* End of Navigation bar css*/
+
+.hero {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.question-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.cta-button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative; /* Ensure that the pseudo-elements are positioned correctly */
+ /* Set a fixed width to avoid resizing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.cta-button:hover::after {
+    content: "Great 😊"; /* Text to display when hovered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #85c1e9;
+    border-radius: 10px;
+    padding: 10px 40px;
+    white-space: nowrap; /* Ensure that the new text stays on one line */
+}
+
+.cta-buttonokay {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative; /* Ensure that the pseudo-elements are positioned correctly */
+ /* Set a fixed width to avoid resizing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: box-shadow 0.3s ease-in-out
+}
+
+.cta-buttonokay:hover::after {
+    content: "Okay 😕"; /* Text to display when hovered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #85c1e9;
+    border-radius: 10px;
+    padding: 10px 40px;
+    white-space: nowrap; /* Ensure that the new text stays on one line */
+}
+
+.cta-button:hover .button-text {
+    visibility: hidden; /* Hide the original text on hover */
+}
+
+
+.animatedbutton{
+    color: var(--clr-accent);
+    background-color: var(--clr-rgba);
+    border: 10 px solid var(--clr-accent);
+    border-radius: 5px;
+    border: 0px solid #04AA6D ;
+    border-radius: 8px;
+    margin: 4px 20px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.animatedbutton:hover{
+    transform: translateX(-5px);
+}
