@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="styles/patient_details.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="therapist_home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">My Patients</button>
+                <div class="dropdown-content">
+                    <a href="patient_records.html">Patient Records</a>
+                    <a href="#">Upcoming Sessions</a>
+                    <a href="#">Create Session</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="Images/profile-icon.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Patient Details Section -->
+    <div class="patient-details-container">
+        <div class="patient-profile">
+            <img id="patient-avatar" src="Images/default-avatar.png" alt="Patient Avatar">
+            <h1 id="patient-name">Patient Name</h1>
+        </div>
+
+        <div class="patient-info">
+            <h2>Patient Details</h2>
+            <p><strong>Eating Habits:</strong> <span id="eating-habits">--</span></p>
+            <p><strong>Sleeping Schedule:</strong> <span id="sleeping-schedule">--</span></p>
+            <p><strong>Weight:</strong> <span id="weight">--</span></p>
+            <p><strong>State of Mind:</strong> <span id="state-of-mind">--</span></p>
+            <p><strong>Other:</strong> <span id="other-info">--</span></p>
+        </div>
+
+        <div class="patient-notes">
+            <h2>Patient Notes</h2>
+            <div id="notes-grid" class="notes-grid">
+                <!-- Notes will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link the external JavaScript file -->
+    <script src="scripts/patient_details.js"></script>
+</body>
+</html>
