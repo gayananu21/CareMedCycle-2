@@ -94,7 +94,7 @@
         {
             "id": 5,
             "name": "Patient 5",
-            "avatar": "images/patientImages/patient5.png",
+            "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "2 Meals, Snacks",
                 "sleepingSchedule": "5 Hours",
@@ -170,7 +170,7 @@
         {
             "id": 9,
             "name": "Patient 9",
-            "avatar": "images/patientImages/patient9.png",
+            "avatar": "images/patientImages/patient2.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
                 "sleepingSchedule": "8 Hours",

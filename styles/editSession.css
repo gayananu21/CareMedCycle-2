@@ -358,3 +358,50 @@ body {
 .patient.dragging {
     opacity: 0.8;
 }
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 10;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.popup-actions button#save-yes-btn,
+.popup-actions button#cancel-yes-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.popup-actions button#save-no-btn,
+.popup-actions button#cancel-no-btn {
+    background-color: #e74c3c;
+    color: white;
+}

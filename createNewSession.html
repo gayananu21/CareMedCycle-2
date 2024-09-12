@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Session</title>
+    <title>Create New Session</title>
     <link rel="stylesheet" href="styles/editSession.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -30,38 +30,38 @@
         </div>
     </div>
 
-    <!-- Edit Session Form -->
+    <!-- Create Session Form -->
     <div class="edit-session-container">
         <!-- Left Form Section -->
         <div class="edit-session-form">
-            <h1>Edit Session</h1>
+            <h1>Create New Session</h1>
 
             <!-- Form fields for session details -->
             <div class="form-field">
                 <label for="title">Title:</label>
-                <input type="text" id="title" value="Session 1">
+                <input type="text" id="title" placeholder="Enter session title">
             </div>
 
             <div class="form-field">
                 <label for="date">Date:</label>
-                <input type="text" id="date" value="12/24/2024">
+                <input type="date" id="date">
             </div>
 
             <div class="form-field">
                 <label for="time">Time:</label>
-                <input type="text" id="time" value="8:30 PM - 10:30 PM">
+                <input type="time" id="time-start"> to <input type="time" id="time-end">
             </div>
 
             <div class="form-field">
                 <label for="location">Location:</label>
-                <input type="text" id="location" value="Care Med Clinic">
+                <input type="text" id="location" placeholder="Enter location">
             </div>
 
-            <!-- Selected patients section with remove option -->
+            <!-- Selected patients section starts empty -->
             <div class="form-field selected-patients-field">
                 <label>Patients:</label>
                 <div id="selected-patients" class="selected-patients">
-                    <!-- Preselected patients will be added here via JavaScript -->
+                    <!-- Initially, no patients here. Patients will be added by dragging from the right side. -->
                 </div>
             </div>
 
@@ -97,67 +97,52 @@
                     <img src="images/patientImages/patient4.png" alt="Patient 4">
                     <span>Patient 4</span>
                 </div>
+
                 <div class="patient" draggable="true" data-id="5">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient7.png" alt="Patient 5">
+                    <img src="images/patientImages/patient1.png" alt="Patient 1">
                     <span>Patient 5</span>
                 </div>
                 <div class="patient" draggable="true" data-id="6">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient8.png" alt="Patient 6">
+                    <img src="images/patientImages/patient2.png" alt="Patient 2">
                     <span>Patient 6</span>
                 </div>
-                <div class="patient" draggable="true" data-id="10">
+                <div class="patient" draggable="true" data-id="7">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient10.png" alt="Patient 3">
-                    <span>Patient 3</span>
+                    <img src="images/patientImages/patient3.png" alt="Patient 3">
+                    <span>Patient 7</span>
                 </div>
-                <div class="patient" draggable="true" data-id="11">
+                <div class="patient" draggable="true" data-id="8">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 3">
-                    <span>Patient 3</span>
+                    <img src="images/patientImages/patient4.png" alt="Patient 4">
+                    <span>Patient 8</span>
                 </div>
-                <div class="patient" draggable="true" data-id="12">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="10">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient10.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="11">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="12">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="10">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient10.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="11">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                <div class="patient" draggable="true" data-id="12">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 3">
-                    <span>Patient 3</span>
-                </div>
-                
-
+                <!-- Add more patients here as necessary -->
             </div>
         </div>
     </div>
 
-    <script src="scripts/editSession.js"></script>
+  
+
+<!-- Save Confirmation Popup -->
+<div id="save-popup" class="popup hidden">
+<p>Do you want to save changes?</p>
+<div class="popup-actions">
+    <button id="save-no-btn">No</button>
+    <button id="save-yes-btn">Yes</button>
+</div>
+</div>
+
+<!-- Cancel Confirmation Popup -->
+<div id="cancel-popup" class="popup hidden">
+<p>Do you want to cancel creating this session?</p>
+<div class="popup-actions">
+    <button id="cancel-no-btn">No</button>
+    <button id="cancel-yes-btn">Yes</button>
+</div>
+</div>
+
+    <script src="scripts/addNewSession.js"></script>
 </body>
 </html>
