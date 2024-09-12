@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist 1 - CaRe Auditor Dashboard</title>
+    <link rel="stylesheet" href="Stylesheet\auditorhomestyle.css">
+    <script>
+        function confirmDownload() {
+            if (confirm("Do you want to download the records as a PDF?")) {
+                alert("Records downloaded successfully.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Images/Brian.png" alt="CaRe Logo">
+                <span>CaRe <span class="med">MED</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="auditor.html">Home</a></li>
+                <li><a href="#">Therapist</a></li>
+                <li><a href="#">Auditor</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <button class="login-button">Logout</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Therapist 3 - Details</h1>
+            <p><strong>Name:</strong> Therapist 3</p>
+            <p><strong>Number of Patients:</strong> 25</p>
+            <p><strong>Types of Cases:</strong> OCD, Phobia</p>
+            <p><strong>Average Length of Consultation:</strong> 40 minutes</p>
+            <button class="cta-button" onclick="confirmDownload()">Download Report</button>
+        </div>
+    </main>
+</body>
+</html>
