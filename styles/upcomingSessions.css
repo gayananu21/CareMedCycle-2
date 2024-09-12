@@ -1,0 +1,253 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles (reuse from previous pages) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo .med {
+    color: #85c1e9;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #f4f7fa;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 0px solid #04AA6D ;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #e9e9e9;
+    color: rgb(0, 0, 0);
+}
+
+.navbar .profile-icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #4f46e5;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar .profile-icon img:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo .med {
+    color: #85c1e9;
+}
+
+.logo .care {
+    color: #000000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 0px solid #04AA6D ;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.dropdown .dropbtn:hover {
+    background-color: #e9e9e9;
+    color: rgb(0, 0, 0);
+}
+
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.dropdown .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown .dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+/* Upcoming Sessions Section */
+.upcoming-sessions-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.upcoming-sessions-section h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Session Grid Layout */
+.sessions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Session Grid Layout */
+.sessions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Session Card Styles */
+.session-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 20px);
+    min-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.session-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Session Header with Edit Icon */
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.session-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.edit-icon {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-icon:hover {
+    color: #2e86de;
+    transform: scale(1.1);
+}
+
+/* Session Details Styling */
+.session-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* When the session-card has the active class, show the details */
+.session-card.active .session-details {
+    max-height: 500px; /* Adjust this to the maximum height needed */
+    transition: max-height 0.3s ease-in;
+}
+
+.session-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Patient Images (avatars) */
+.patients {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/* Styling each patient image */
+.patients img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid #ddd; /* Adds a border around the image */
+    transition: transform 0.3s ease;
+}
+
+/* Optional hover effect to enlarge images slightly */
+.patients img:hover {
+    transform: scale(1.1);
+    border-color: #2e86de;
+}

@@ -1,5 +1,5 @@
 // Fetch the patient data from JSON file
-fetch('jsonFiles/patient_records.json')
+fetch('jsonfiles/patient_records.json')
     .then(response => response.json())
     .then(data => {
         const patientsGrid = document.getElementById('patients-grid');

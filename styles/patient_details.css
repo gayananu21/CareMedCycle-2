@@ -26,13 +26,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #2e86de;
     
+    
 }
+
 
 .patient-info h2 {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: #333;
+    
 }
 
 .patient-info p {
@@ -56,6 +59,8 @@
 .patient-notes {
     margin: 40px ;
     max-width: 50%;
+
+    
 }
 
 .patient-notes h2 {
@@ -64,8 +69,26 @@
     color: #333;
     margin-bottom: 20px;
     text-align: left; /* Center the title */
+
 }
 
+.patient-notes-header {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+/* Patient Notes Heading */
+.patient-notes-header h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px; /* Space between the heading and the plus button */
+    display: inline-block;
+    margin-left: 70px;
+}
 /* Notes Grid Layout */
 /* Notes Grid Layout */
 .notes-grid {
@@ -85,11 +108,12 @@
     min-width: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    border: 5px solid #eaeef8;
 }
 
 /* Hover effect for note cards */
 .note-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: 0 6px 10px rgba(255, 255, 255, 0.5), 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -128,7 +152,7 @@
 /* Icons for Date, Note, Patient Type */
 .icon {
     margin-right: 5px;
-    color: #2e86de;
+    color: #715046;
     font-size: 1.2rem;
     vertical-align: middle;
 }
@@ -280,7 +304,7 @@
 /* Icons for Date, Note, and Patient Type */
 .icon {
     margin-right: 5px;
-    color: #2e86de;
+    color: #8b9293;
     font-size: 1.2rem;
     vertical-align: middle;
 }
@@ -296,4 +320,34 @@
 
 .icon-type::before {
     content: "💉"; /* Patient Type icon */
+}
+
+
+/* Plus button styles */
+/* Plus button styles */
+.add-note-btn {
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.add-note-btn:hover {
+    background-color: #333;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Font Awesome Plus Icon Styling */
+.add-note-btn i {
+    font-size: 1.2rem;
 }

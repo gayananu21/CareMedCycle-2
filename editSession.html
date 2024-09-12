@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Session</title>
+    <link rel="stylesheet" href="styles/editSession.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="therapist_home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">My Patients</button>
+                <div class="dropdown-content">
+                    <a href="patient_records.html">Patient Records</a>
+                    <a href="upcomingSessions.html">Upcoming Sessions</a>
+                    <a href="#">Create Session</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="images/profile-icon.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Edit Session Form -->
+    <div class="edit-session-container">
+        <!-- Left Form Section -->
+        <div class="edit-session-form">
+            <h1>Edit Session</h1>
+
+            <!-- Form fields for session details -->
+            <div class="form-field">
+                <label for="title">Title:</label>
+                <input type="text" id="title" value="Session 1">
+            </div>
+
+            <div class="form-field">
+                <label for="date">Date:</label>
+                <input type="text" id="date" value="12/24/2024">
+            </div>
+
+            <div class="form-field">
+                <label for="time">Time:</label>
+                <input type="text" id="time" value="8:30 PM - 10:30 PM">
+            </div>
+
+            <div class="form-field">
+                <label for="location">Location:</label>
+                <input type="text" id="location" value="Care Med Clinic">
+            </div>
+
+            <!-- Selected patients section with remove option -->
+            <div class="form-field selected-patients-field">
+                <label>Patients:</label>
+                <div id="selected-patients" class="selected-patients">
+                    <!-- Patients will be added here via drag-and-drop -->
+                </div>
+            </div>
+
+            <!-- Buttons for save and cancel -->
+            <div class="form-actions">
+                <button class="save-btn">Save</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Right Side "Add More Patients" Section -->
+        <div class="add-more-patients-section">
+            <h2>Add More Patients</h2>
+            <div id="available-patients" class="available-patients">
+                <!-- Patients available for dragging -->
+                <div class="patient" draggable="true" data-id="1">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient1.png" alt="Patient 1">
+                    <span>Patient 1</span>
+                </div>
+                <div class="patient" draggable="true" data-id="2">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient2.png" alt="Patient 2">
+                    <span>Patient 2</span>
+                </div>
+                <div class="patient" draggable="true" data-id="3">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient3.png" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="4">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient4.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="5">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient7.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="6">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient8.png" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="7">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient6.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="8">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient3.png" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="9">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient11.webp" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="10">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient10.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="11">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient4.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="12">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient2.png" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/editSession.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Sessions</title>
+    <link rel="stylesheet" href="styles/upcomingSessions.css">
+    <!-- Font Awesome for edit icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (reuse from previous pages) -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="therapist_home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">My Patients</button>
+                <div class="dropdown-content">
+                    <a href="patient_records.html">Patient Records</a>
+                    <a href="#">Upcoming Sessions</a>
+                    <a href="#">Create Session</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="images/profile-icon.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Upcoming Sessions Section -->
+    <div class="upcoming-sessions-section">
+        <h1>Upcoming Sessions</h1>
+        <div class="sessions-grid">
+            <!-- Session Card 1 -->
+            <div class="session-card">
+                <div class="session-header">
+                    <h2>Session 1</h2>
+                    <i class="fas fa-pencil-alt edit-icon"></i>
+                </div>
+                <div class="session-details">
+                    <p><strong>Date:</strong> 12/24/2024</p>
+                    <p><strong>Time:</strong> 8:30 PM - 10:30 PM</p>
+                    <p><strong>Location:</strong> Care Med Clinic</p>
+                    <p><strong>Patients:</strong></p>
+                    <div class="patients">
+                        <img src="images/patientImages/patient1.png" alt="Patient 1">
+                        <img src="images/patientImages/patient10.jpeg" alt="Patient 10">
+                        <img src="images/patientImages/patient4.jpeg" alt="Patient 4">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Session Card 2 -->
+            <div class="session-card">
+                <div class="session-header">
+                    <h2>Session 2</h2>
+                    <i class="fas fa-pencil-alt edit-icon"></i>
+                </div>
+                <div class="session-details">
+                    <p><strong>Date:</strong> 12/25/2024</p>
+                    <p><strong>Time:</strong> 9:00 AM - 11:00 AM</p>
+                    <p><strong>Location:</strong> Care Med Clinic</p>
+                    <p><strong>Patients:</strong></p>
+                    <div class="patients">
+                        <img src="images/patientImages/patient2.png" alt="Patient 2">
+                        <img src="images/patientImages/patient3.png" alt="Patient 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more session cards as needed -->
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="scripts/upcomingSessions.js"></script>
+</body>
+</html>
