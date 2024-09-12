@@ -1,9 +1,12 @@
+/* General Page Styles */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navbar Styles (reuse from previous pages) */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -148,7 +151,6 @@ body {
     font-weight: bold;
     color: #2e2990;
     display: inline-block;
-    
 }
 
 .welcome-section p {
@@ -157,6 +159,7 @@ body {
     margin-top: 20px;
 }
 
+/* Patients grid layout */
 .patients-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -165,7 +168,8 @@ body {
     text-align: center;
 }
 
-.patient {
+/* Patient card */
+.patient-card {
     background-color: #ffffff;
     padding: 25px;
     border-radius: 15px;
@@ -174,9 +178,28 @@ body {
     color: #333;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center image and text horizontally */
+    justify-content: center; /* Center image and text vertically */
+    text-align: center; /* Center the text */
 }
 
-.patient:hover {
+.patient-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Space between image and name */
+}
+
+.patient-card span {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Hover effect for patient card */
+.patient-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }

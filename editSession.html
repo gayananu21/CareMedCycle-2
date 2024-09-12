@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <!-- Navbar -->
     <div class="navbar">
         <div class="logo">
@@ -62,13 +61,13 @@
             <div class="form-field selected-patients-field">
                 <label>Patients:</label>
                 <div id="selected-patients" class="selected-patients">
-                    <!-- Patients will be added here via drag-and-drop -->
+                    <!-- Preselected patients will be added here via JavaScript -->
                 </div>
             </div>
 
             <!-- Buttons for save and cancel -->
             <div class="form-actions">
-                <button class="save-btn">Save</button>
+                <button class="save-btn" id="save-session">Save</button>
                 <button class="cancel-btn">Cancel</button>
             </div>
         </div>
@@ -95,32 +94,47 @@
                 </div>
                 <div class="patient" draggable="true" data-id="4">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.jpeg" alt="Patient 3">
-                    <span>Patient 3</span>
+                    <img src="images/patientImages/patient4.jpeg" alt="Patient 4">
+                    <span>Patient 4</span>
                 </div>
                 <div class="patient" draggable="true" data-id="5">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient7.jpeg" alt="Patient 3">
-                    <span>Patient 3</span>
+                    <img src="images/patientImages/patient7.jpeg" alt="Patient 5">
+                    <span>Patient 5</span>
                 </div>
                 <div class="patient" draggable="true" data-id="6">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient8.png" alt="Patient 3">
+                    <img src="images/patientImages/patient8.png" alt="Patient 6">
+                    <span>Patient 6</span>
+                </div>
+                <div class="patient" draggable="true" data-id="10">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient10.jpeg" alt="Patient 3">
                     <span>Patient 3</span>
                 </div>
-                <div class="patient" draggable="true" data-id="7">
+                <div class="patient" draggable="true" data-id="11">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient6.jpeg" alt="Patient 3">
+                    <img src="images/patientImages/patient4.jpeg" alt="Patient 3">
                     <span>Patient 3</span>
                 </div>
-                <div class="patient" draggable="true" data-id="8">
+                <div class="patient" draggable="true" data-id="12">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient3.png" alt="Patient 3">
+                    <img src="images/patientImages/patient2.png" alt="Patient 3">
                     <span>Patient 3</span>
                 </div>
-                <div class="patient" draggable="true" data-id="9">
+                <div class="patient" draggable="true" data-id="10">
                     <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient11.webp" alt="Patient 3">
+                    <img src="images/patientImages/patient10.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="11">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient4.jpeg" alt="Patient 3">
+                    <span>Patient 3</span>
+                </div>
+                <div class="patient" draggable="true" data-id="12">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="images/patientImages/patient2.png" alt="Patient 3">
                     <span>Patient 3</span>
                 </div>
                 <div class="patient" draggable="true" data-id="10">
@@ -139,7 +153,7 @@
                     <span>Patient 3</span>
                 </div>
                 
-                
+
             </div>
         </div>
     </div>

@@ -3,45 +3,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a patient to the selected patients area
     function addPatientToSelected(patientElement) {
-        // Clone patient and remove the "+" icon
         const clonedPatient = patientElement.cloneNode(true);
         clonedPatient.querySelector('.add-icon').remove();
 
-        // Add a remove icon instead
         const removeIcon = document.createElement('i');
         removeIcon.classList.add('fas', 'fa-minus-circle', 'remove-icon');
         clonedPatient.appendChild(removeIcon);
 
-        // Add cloned patient to the selected patients area
         const selectedPatients = document.querySelector('#selected-patients');
         selectedPatients.appendChild(clonedPatient);
 
-        // Remove the patient from the available list
         patientElement.remove();
 
-        // Add event listener to remove the patient from selected list
         removeIcon.addEventListener('click', () => {
             selectedPatients.removeChild(clonedPatient);
-            addPatientToAvailable(clonedPatient); // Re-add to the available list
+            addPatientToAvailable(clonedPatient);
         });
     }
 
     // Function to add a patient back to the available list
     function addPatientToAvailable(patientElement) {
-        // Clone patient and remove the "-" icon
         const clonedPatient = patientElement.cloneNode(true);
         clonedPatient.querySelector('.remove-icon').remove();
 
-        // Add the "+" icon back
         const addIcon = document.createElement('i');
         addIcon.classList.add('fas', 'fa-plus-circle', 'add-icon');
         clonedPatient.appendChild(addIcon);
 
-        // Add cloned patient back to the available patients area
         const availablePatients = document.querySelector('#available-patients');
         availablePatients.appendChild(clonedPatient);
 
-        // Re-add event listeners for drag and click on the newly added patient
         clonedPatient.addEventListener('dragstart', (e) => {
             draggedPatient = e.target;
             draggedPatient.classList.add('dragging');
@@ -52,33 +43,35 @@ document.addEventListener('DOMContentLoaded', () => {
             draggedPatient = null;
         });
 
-        // Re-add event listener for the "+" icon
         addIcon.addEventListener('click', () => {
             addPatientToSelected(clonedPatient);
         });
     }
 
-    // Make available patients draggable
+    // Initial setup for drag events and click to add
     document.querySelectorAll('.available-patients .patient').forEach(patient => {
-        // Drag start event
         patient.addEventListener('dragstart', (e) => {
             draggedPatient = e.target;
             draggedPatient.classList.add('dragging');
         });
 
-        // Drag end event
         patient.addEventListener('dragend', (e) => {
             draggedPatient.classList.remove('dragging');
             draggedPatient = null;
         });
 
-        // Click event for the "+" icon
         patient.querySelector('.add-icon').addEventListener('click', () => {
             addPatientToSelected(patient);
         });
     });
 
-    // Make the selected patients area droppable
+    // Preselect 3 default patients (first 3 in the list)
+    const availablePatients = document.querySelectorAll('.available-patients .patient');
+    for (let i = 0; i < 3; i++) {
+        addPatientToSelected(availablePatients[i]);
+    }
+
+    // Drag and drop functionality
     const selectedPatients = document.querySelector('#selected-patients');
 
     selectedPatients.addEventListener('dragover', (e) => {
@@ -89,6 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (draggedPatient) {
             addPatientToSelected(draggedPatient);
+        }
+    });
+
+    // Save button with confirmation and alert bar navigation
+    const saveButton = document.querySelector('.save-btn');
+    saveButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const confirmSave = confirm('Do you want to save changes?');
+        if (confirmSave) {
+            alert('Session edited successfully!');
+            window.location.href = 'upcomingSessions.html'; // Redirect to upcoming sessions
         }
     });
 });

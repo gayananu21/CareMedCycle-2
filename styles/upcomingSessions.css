@@ -136,9 +136,6 @@ body {
     display: block;
 }
 
-
-
-
 /* Upcoming Sessions Section */
 .upcoming-sessions-section {
     padding: 40px;
@@ -159,30 +156,34 @@ body {
     justify-content: space-between;
 }
 
-/* Session Grid Layout */
-.sessions-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
 /* Session Card Styles */
 .session-card {
-    background-color: #fff;
+    background-color: #f4f4f4;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1 1 calc(33% - 20px);
     min-width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 100px; /* Collapsed height */
+    overflow: hidden;  /* Hide details when collapsed */
+    transition: max-height 0.5s ease, box-shadow 0.3s ease;
     position: relative;
-    cursor: pointer;
 }
 
-.session-card:hover {
-    transform: translateY(-5px);
+/* Expanded session card */
+.session-card.expanded {
+    max-height: 400px; /* Expanded height */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* For smoother content reveal */
+.session-details {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.session-card.expanded .session-details {
+    opacity: 1;
 }
 
 /* Session Header with Edit Icon */
@@ -209,24 +210,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Session Details Styling */
-.session-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-/* When the session-card has the active class, show the details */
-.session-card.active .session-details {
-    max-height: 500px; /* Adjust this to the maximum height needed */
-    transition: max-height 0.3s ease-in;
-}
-
-.session-details p {
-    margin: 5px 0;
-    color: #555;
-}
-
 /* Patient Images (avatars) */
 .patients {
     display: flex;
@@ -235,15 +218,26 @@ body {
     margin-top: 10px;
 }
 
-/* Styling each patient image */
-.patients img {
+/* Styling each patient container */
+.patient {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.patient img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
     object-fit: cover;
     border: 2px solid #ddd; /* Adds a border around the image */
     transition: transform 0.3s ease;
+}
+
+.patient span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #333;
 }
 
 /* Optional hover effect to enlarge images slightly */
