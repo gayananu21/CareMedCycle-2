@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Professional Staff Profile</title>
+    <link rel="stylesheet" href="StyleSheets/editprofessionalstaffname.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../Images/HeaderLogo.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+        </div>
+    </div>
+
+    <div class="professional-staff-edit-section">
+        <div class="profile-header">
+            <img src="../Images/patientImages/patient11.webp" alt="Professional Staff Icon" class="staff-icon">
+            <button class="edit-icon-btn"><img src="../Images/profile-icon.png" alt="Edit Icon"></button>
+        </div>
+        <h1>Edit Professional Staff Name</h1>
+
+        <div class="staff-details-edit">
+            <input type="text" placeholder="Edit Contact No.">
+            <input type="email" placeholder="Edit Email Address">
+            <input type="text" placeholder="Edit Office Address">
+        </div>
+
+        <div class="action-buttons">
+            <button class="cancel-btn">Cancel</button>
+            <button class="save-btn">Save</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saveButton = document.querySelector('.save-btn');
+
+            saveButton.addEventListener('click', function() {
+                alert("Save successfully");
+            });
+        });
+    </script>
+</body>
+</html>

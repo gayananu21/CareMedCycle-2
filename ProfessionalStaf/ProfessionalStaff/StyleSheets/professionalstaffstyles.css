@@ -1,0 +1,185 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo .med {
+    color: #85c1e9;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links button {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.nav-links button:hover {
+    transform: translateX(-5px);
+    background-color: #85c1e9;
+    color: white;
+}
+
+.login-button {
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #19232b;
+    color: white;
+}
+
+/* Session Header */
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 2px solid #1e3a8a;
+}
+
+.session-details h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin: 0;
+}
+
+.session-details p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Session Note */
+.session-note {
+    padding: 20px;
+    background-color: white;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Section Title */
+.section-title {
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Patient and Therapist Grid */
+.patient-therapist-grid {
+    padding: 20px;
+}
+
+.grid-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Patient and Therapist Cards */
+.patient-card, .therapist-card {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.patient-card:hover, .therapist-card:hover {
+    background-color: #cfd8dc;
+    transform: scale(1.05);
+}
+
+.plus-btn {
+    background-color: #85c1e9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.plus-btn:hover {
+    background-color: #19232b;
+}
+
+/* Save Button */
+.save-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.save-button {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.save-button:hover {
+    background-color: #19232b;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

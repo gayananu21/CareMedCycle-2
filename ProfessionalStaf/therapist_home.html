@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaRe Med - Therapist Dashboard</title>
+    <link rel="stylesheet" href="styles/therapist_home.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="therapist_home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">My Patients</button>
+                <div class="dropdown-content">
+                    <a href="patient_records.html">Patient Records</a>
+                    <a href="upcomingSessions.html">Upcoming Sessions</a>
+                    <a href="createNewSession.html">Create Session</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="images/profile-icon.png" alt="Profile">
+        </div>
+    </div>
+
+    <div class="welcome-section">
+        <h1>Welcome<br><span>"Lisa Firestone"</span></h1>
+        <p>Recently Treated Patients</p>
+    </div>
+
+    <!-- Patients Grid Section -->
+    <div class="patients-grid">
+        <!-- Example of patient with image and name -->
+        <div class="patient-card" data-id="1">
+            <img src="images/patientImages/patient1.png" alt="Patient 1">
+            <span class="patient-name">Patient 1</span>
+            </div>
+        <div class="patient-card" data-id="2">
+            <img src="images/patientImages/patient2.png" alt="Patient 2" class="patient-img">
+            <span class="patient-name">Patient 2</span>
+        </div>
+        <div class="patient-card" data-id="3">
+            <img src="images/patientImages/patient3.png" alt="Patient 3" class="patient-img">
+            <span class="patient-name">Patient 3</span>
+        </div>
+      
+        <!-- Add more patients as needed -->
+    </div>
+    <script src="scripts/therapistHome.js"></script>
+
+</body>
+</html>
