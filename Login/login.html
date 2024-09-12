@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Med Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box transition-fade">
+            <h1>CARE
+                <span class="med" >MED</span>
+            </h1>
+            <img src="Images/Brian.png" alt="Logo" style="height: 100px;">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "patient1" && password === "admin") {
+                alert("Welcome to Patient!");
+            } else if (username === "therapist1" && password === "therapist1") {
+                alert("Welcome to Therapist!");
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
