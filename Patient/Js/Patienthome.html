@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Care Med</title>
-    <link rel="stylesheet" href="StyleSheet\homestyle.css">
+    <link rel="stylesheet" href="StyleSheet/homestyle.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
-               <!--Navigation bar Start from below -->
-               <nav>
-                <div class="logo">
-                    <img src="Images\Brian.png" alt="Care Med Logo">
-                    <span>CARE <span class="med">MED</span></span>
-                </div>
-                <ul class="nav-links">
-                    <button class="animatedbutton" >Home</button>
-                    <button class="animatedbutton">Therapist</button>
-                    <button class="animatedbutton">Contact Us</button>
-                </ul>
-                <button class="login-button">Logout</button>
-            </nav>
-            <!--Navigation end-->
+        <!--Navigation bar Start from below -->
+        <nav>
+            <div class="logo">
+                <img src="Images/Brian.png" alt="Care Med Logo">
+                <span>CARE <span class="med">MED</span></span>
+            </div>
+            <ul class="nav-links">
+                <a href="#" class="animatedbutton">Home</a>
+                <a href="#" class="animatedbutton">Therapist</a>
+                <a href="#" class="animatedbutton">My Journal</a>
+            </ul>
+            <button class="login-button">Logout</button>
+        </nav>
+        <!--Navigation end-->
     </header>
 
     <!-- Welcome Section -->
@@ -33,16 +33,15 @@
         <div class="question-box">
             <h2>How are you feeling today?</h2>
             <div class="button-container">
-                <button class="cta-button">
+                <!-- Use anchor tag styled like a button -->
+                <a href="/Patient/Js/patientform.html" class="cta-button">
                     <span class="button-text">Great 🙂</span>
-                </button>
-                <button class="cta-buttonokay">
+                </a>
+                <a href="/Patient/Js/patientform.html" class="cta-buttonokay">
                     <span class="button-text">Okay 🙂</span>
-                </button>
-            </div>    
+                </a>
             </div>
         </div>
     </section>
-
 </body>
 </html>

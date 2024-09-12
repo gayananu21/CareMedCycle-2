@@ -19,17 +19,12 @@ fetch('jsonfiles/therapist_records.json')
             const patientName = document.createElement('h3');
             patientName.textContent = patient.name;
 
-            // Create a link to patient details using their unique ID
-            const patientLink = document.createElement('a');
-            patientLink.href = `patient_details.html?id=${patient.id}`;
-            patientLink.appendChild(patientCard);
-
             // Append image and name to the card
             patientCard.appendChild(patientImg);
             patientCard.appendChild(patientName);
 
-            // Append the link (wrapped card) to the grid
-            patientsGrid.appendChild(patientLink);
+            // Append the patient card directly to the grid (without a link)
+            patientsGrid.appendChild(patientCard);
         });
     })
     .catch(error => {
