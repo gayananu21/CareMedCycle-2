@@ -2,7 +2,7 @@
     "patients": [
         {
             "id": 1,
-            "name": "Ethan",
+            "name": "Dr.Ethan",
             "avatar": "images/patientImages/patient1.png",
             "details": {
                 "eatingHabits": "2 Meals per day",
@@ -26,7 +26,7 @@
         },
         {
             "id": 2,
-            "name": "Liam",
+            "name": "Dr.Liam",
             "avatar": "images/patientImages/patient2.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -50,7 +50,7 @@
         },
         {
             "id": 3,
-            "name": "Noah",
+            "name": "Dr.Noah",
             "avatar": "images/patientImages/patient3.png",
             "details": {
                 "eatingHabits": "2 Meals and 1 snack",
@@ -74,7 +74,7 @@
         },
         {
             "id": 4,
-            "name": "Alexander",
+            "name": "Dr.Alexander",
             "avatar": "images/patientImages/patient4.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -93,7 +93,7 @@
         },
         {
             "id": 5,
-            "name": "Benjamin",
+            "name": "Dr.Benjamin",
             "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "2 Meals, Snacks",
@@ -112,7 +112,7 @@
         },
         {
             "id": 6,
-            "name": "Samuel",
+            "name": "Dr.Samuel",
             "avatar": "images/patientImages/patient6.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
@@ -131,7 +131,7 @@
         },
         {
             "id": 7,
-            "name": "Lucas",
+            "name": "Dr.Lucas",
             "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -150,7 +150,7 @@
         },
         {
             "id": 8,
-            "name": "Daniel",
+            "name": "Dr.Daniel",
             "avatar": "images/patientImages/patient8.png",
             "details": {
                 "eatingHabits": "2 Meals, 1 Snack",
@@ -169,7 +169,7 @@
         },
         {
             "id": 9,
-            "name": "James",
+            "name": "Dr.James",
             "avatar": "images/patientImages/patient2.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -188,7 +188,7 @@
         },
         {
             "id": 10,
-            "name": "Michael",
+            "name": "Dr.Michael",
             "avatar": "images/patientImages/patient10.png",
             "details": {
                 "eatingHabits": "2 Meals per day",
@@ -207,7 +207,7 @@
         },
         {
             "id": 11,
-            "name": "Henry",
+            "name": "Dr.Henry",
             "avatar": "images/patientImages/patient11.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
@@ -226,7 +226,7 @@
         },
         {
             "id": 12,
-            "name": "Oliver",
+            "name": "Dr.Oliver",
             "avatar": "images/patientImages/patient12.png",
             "details": {
                 "eatingHabits": "3 Meals per day",

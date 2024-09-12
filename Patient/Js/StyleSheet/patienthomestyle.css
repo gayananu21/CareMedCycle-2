@@ -92,7 +92,9 @@ nav {
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
-
+a{
+    text-decoration: none;
+}
 
 .nav-links a:hover {
     background-color: #e9e9e9;

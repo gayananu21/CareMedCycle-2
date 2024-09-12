@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaRe Med - Patient Records</title>
+    <link rel="stylesheet" href="styles\therapist-records.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Images/Brian.png" alt="Care Med Logo">
+            <span class="care">CARE <span class="med">MED</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="/Patient/Js/Patient.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Therapist</button>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="Images/profile-icon.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Patient Records Section -->
+    <div class="patients-record-section">
+        <h1>Our Therapists</h1>
+        <div id="patients-grid" class="patients-grid">
+            <!-- Patient cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Link the external JavaScript file -->
+    <script src="scripts\therapist-records.js"></script>
+</body>
+</html>
