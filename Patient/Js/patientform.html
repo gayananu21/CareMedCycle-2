@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Form</title>
+    <link rel="stylesheet" href="StyleSheet/formstyle.css">
+</head>
+<body>
+    <header>
+        <!--Navigation bar Start from below -->
+<nav>
+   <div class="logo">
+       <img src="Images\Brian.png" alt="Care Med Logo">
+       <span>CARE <span class="med">MED</span></span>
+   </div>
+   <ul class="nav-links">
+       <button class="animatedbutton" >Home</button>
+       <button class="animatedbutton">Therapist</button>
+       <button class="animatedbutton">Contact Us</button>
+   </ul>
+   <div class="profile-icon">
+    <img src="images/profile-icon.png" alt="Profile">
+</div>
+</nav>
+<!--Navigation end-->
+</header>
+    <div class="container">
+        <form class="patient-form" id="patient-form">
+            <h1>Dineth's Journals</h1>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="state">State of Mind</label>
+                    <input type="text" id="state" name="state" placeholder="Great (Auto fill mode according to selection)">
+                </div>
+
+                <div class="form-group">
+                    <label for="sleeping">Sleeping Schedule</label>
+                    <textarea id="sleeping" name="sleeping" placeholder="Describe your sleeping schedule..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="meal">Meal Routine</label>
+                    <textarea id="meal" name="meal" placeholder="Describe your meal routine..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="other">Other</label>
+                    <textarea id="other" name="other" placeholder="Any other details..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="button" class="cta-button" id="save-button">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p>Form saved successfully!</p>
+        </div>
+    </div>
+
+    <script src="Js\app.js"></script>
+</body>
+</html>
