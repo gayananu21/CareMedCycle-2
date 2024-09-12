@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (notesGrid) {
                     notesGrid.innerHTML = ''; // Clear existing notes
 
-                    // Loop through and render each note
-                    patient.notes.forEach(note => {
+                    // Loop through and render each note with a unique note ID
+                    patient.notes.forEach((note, index) => {
                         const noteCard = document.createElement('div');
                         noteCard.classList.add('note-card');
 
                         noteCard.innerHTML = `
                             <div class="note-header">
-                                <i class="edit-icon fas fa-pencil-alt"></i>
+                                <i class="edit-icon fas fa-pencil-alt" data-note-id="${index}" data-patient-id="${patientId}"></i>
                             </div>
                             <p><strong><i class="icon fa fa-calendar-alt"></i> Date:</strong> ${note.date}</p>
                             <p><strong><i class="icon fa fa-sticky-note"></i> Note:</strong></p>
@@ -55,6 +55,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
 
                         notesGrid.appendChild(noteCard);
+                    });
+
+                    // Add event listener to all edit icons
+                    document.querySelectorAll('.edit-icon').forEach(icon => {
+                        icon.addEventListener('click', function(event) {
+                            const noteId = event.target.getAttribute('data-note-id');
+                            const patientId = event.target.getAttribute('data-patient-id');
+                            // Redirect to editNote.html with noteId and patientId as query parameters
+                            window.location.href = `editNote.html?noteId=${noteId}&patientId=${patientId}`;
+                        });
                     });
                 }
             } else {
