@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/editProfile.css">
+</head>
+<body>
+
+   <!-- Navbar -->
+   <div class="navbar">
+    <div class="logo">
+        <img src="Images/Brian.png" alt="Care Med Logo">
+        <span class="care">CARE <span class="med">MED</span></span>
+    </div>
+    <div class="nav-links">
+        <a href="therapist_home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">My Patients</button>
+            <div class="dropdown-content">
+                <a href="patient_records.html">Patient Records</a>
+                <a href="upcomingSessions.html">Upcoming Sessions</a>
+                <a href="createNewSession.html">Create Session</a>
+            </div>
+        </div>
+    </div>
+    <div class="profile-icon">
+        <a href="therapistProfile.html">
+        <img src="Images/profile-icon.png" alt="Profile">
+    </a>
+        
+    </div>
+</div>
+
+    <!-- Profile Edit Section -->
+    <section class="profile-section">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="images/patient2.png" alt="Therapist Image">
+            </div>
+            <div class="profile-info">
+                <h1>Edit Profile</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" value="Dr. Lisa Firestone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialization">Specialization:</label>
+                        <input type="text" id="specialization" value="Clinical Psychologist & Mindfulness Expert">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Contact:</label>
+                        <input type="text" id="contact" value="+123-456-7890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="lisa.firestone@caremed.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="office">Office Address:</label>
+                        <input type="text" id="office" value="123 Wellness Street, Care Med Clinic">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialties">Specialties:</label>
+                        <input type="text" id="specialties" value="CBT, Anxiety, PTSD">
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="save-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS (for form submission) -->
+    <script src="scripts/editProfile.js"></script>
+</body>
+</html>

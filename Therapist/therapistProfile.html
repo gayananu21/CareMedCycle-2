@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Profile</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/therapistProfile.css">
+</head>
+<body>
+
+   <!-- Navbar -->
+   <div class="navbar">
+    <div class="logo">
+        <img src="Images/Brian.png" alt="Care Med Logo">
+        <span class="care">CARE <span class="med">MED</span></span>
+    </div>
+    <div class="nav-links">
+        <a href="therapist_home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">My Patients</button>
+            <div class="dropdown-content">
+                <a href="patient_records.html">Patient Records</a>
+                <a href="upcomingSessions.html">Upcoming Sessions</a>
+                <a href="createNewSession.html">Create Session</a>
+            </div>
+        </div>
+    </div>
+    <div class="profile-icon">
+        <img src="Images/profile-icon.png" alt="Profile" a href = "therapistProfile.html">
+    </div>
+</div>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-card">
+            <!-- Edit Icon in Corner -->
+            <div class="edit-icon">
+                <a href="editTherapistProfile.html">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+            </div>
+
+            <div class="profile-image">
+                <img src="images/patient2.png" alt="Therapist Image">
+            </div>
+            <div class="profile-info">
+                <h1>Dr. Lisa Firestone</h1>
+                <p>Clinical Psychologist & Mindfulness Expert</p>
+                <ul class="details">
+                    <li><strong>Contact:</strong> +123-456-7890</li>
+                    <li><strong>Email:</strong> lisa.firestone@caremed.com</li>
+                    <li><strong>Office:</strong> 123 Wellness Street, Care Med Clinic</li>
+                    <li><strong>Specialties:</strong> CBT, Anxiety, PTSD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- External JS (for animations) -->
+    <script src="scripts/therapist_profile.js"></script>
+</body>
+</html>
