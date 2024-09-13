@@ -1,16 +1,17 @@
-/* New Section: Patient Records */
+/* Patients Record Section */
 .patients-record-section {
     text-align: center;
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
 .patients-record-section h1 {
     font-size: 2.5rem;
     color: #1f2937;
-    margin-bottom: 70px;
-    
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Patients Grid */
 .patients-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -19,47 +20,74 @@
     text-align: center;
 }
 
+/* Patient Card Styling */
 .patient-card {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 50%; /* Make the container round */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 50%; /* Circle Shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px; /* Fixed size for round shape */
+    width: 200px;
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: 0 auto; /* Center align */
-    
+    animation: fadeIn 1s ease-in-out;
 }
 
 .patient-card img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .patient-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: #333;
+    font-family: 'Roboto', sans-serif;
 }
 
 .patient-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.patient-card a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;        /* Ensures the link takes on the text color */
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .patients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .patient-card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .patient-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .patient-card h3 {
+        font-size: 1rem;
+    }
 }
 
-.patient-card a:hover {
-    color: #4f46e5;  /* Change the color on hover */
+/* Keyframe Animation for Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 body {

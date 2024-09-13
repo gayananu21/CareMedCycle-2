@@ -340,3 +340,35 @@
 .add-note-btn i {
     font-size: 1.2rem;
 }
+
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slight upward movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation to Patient Info Section */
+.patient-info, .patient-notes-header, .notes-grid {
+    animation: fadeIn 1.2s ease-in-out;  /* Animation duration */
+    opacity: 0;  /* Initially hidden */
+    animation-fill-mode: forwards;  /* Keep the end state after animation */
+}
+
+/* Add delay for a more staggered effect */
+.patient-info {
+    animation-delay: 0.1s;
+}
+
+.patient-notes-header {
+    animation-delay: 0.3s;
+}
+
+.notes-grid {
+    animation-delay: 0.5s;
+}

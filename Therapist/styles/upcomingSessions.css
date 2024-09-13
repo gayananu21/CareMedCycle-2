@@ -245,3 +245,127 @@ body {
     transform: scale(1.1);
     border-color: #2e86de;
 }
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slight upward movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Upcoming Sessions Section */
+.upcoming-sessions-section {
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in for the section */
+    opacity: 0;  /* Initially hidden */
+    animation-fill-mode: forwards;
+}
+
+/* Session Grid Layout */
+.sessions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    animation: fadeIn 1s ease-in-out 0.3s; /* Add fade-in delay */
+    opacity: 0;  /* Initially hidden */
+    animation-fill-mode: forwards;
+}
+
+/* Session Card Styles */
+.session-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 20px);
+    min-width: 280px;
+    max-height: 100px; /* Collapsed height */
+    overflow: hidden;  /* Hide details when collapsed */
+    transition: max-height 0.5s ease, box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.5s; /* Add staggered delay for each card */
+    animation-fill-mode: forwards;
+}
+
+/* Expanded session card */
+.session-card.expanded {
+    max-height: 400px; /* Expanded height */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* For smoother content reveal */
+.session-details {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.session-card.expanded .session-details {
+    opacity: 1;
+}
+
+/* Session Header with Edit Icon */
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.session-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.edit-icon {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-icon:hover {
+    color: #2e86de;
+    transform: scale(1.1);
+}
+
+/* Patient Images (avatars) */
+.patients {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/* Styling each patient container */
+.patient {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.patient img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd; /* Adds a border around the image */
+    transition: transform 0.3s ease;
+}
+
+.patient span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Optional hover effect to enlarge images slightly */
+.patients img:hover {
+    transform: scale(1.1);
+    border-color: #2e86de;
+}
