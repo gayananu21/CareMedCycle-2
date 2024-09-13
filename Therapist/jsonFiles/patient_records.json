@@ -2,11 +2,7 @@
     "patients": [
         {
             "id": 1,
-<<<<<<< HEAD
-            "name": "Ethan",
-=======
             "name": "John Smith",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient1.png",
             "details": {
                 "eatingHabits": "2 Meals per day",
@@ -30,11 +26,7 @@
         },
         {
             "id": 2,
-<<<<<<< HEAD
-            "name": "Liam",
-=======
             "name": "Michael Brown",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient2.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -58,11 +50,7 @@
         },
         {
             "id": 3,
-<<<<<<< HEAD
-            "name": "Noah",
-=======
             "name": "David Johnson",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient3.png",
             "details": {
                 "eatingHabits": "2 Meals and 1 snack",
@@ -86,11 +74,7 @@
         },
         {
             "id": 4,
-<<<<<<< HEAD
-            "name": "Alexander",
-=======
             "name": "Robert Wilson",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient4.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -109,11 +93,7 @@
         },
         {
             "id": 5,
-<<<<<<< HEAD
-            "name": "Benjamin",
-=======
             "name": "James Anderson",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "2 Meals, Snacks",
@@ -132,11 +112,7 @@
         },
         {
             "id": 6,
-<<<<<<< HEAD
-            "name": "Samuel",
-=======
             "name": "William Martinez",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient6.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
@@ -155,11 +131,7 @@
         },
         {
             "id": 7,
-<<<<<<< HEAD
-            "name": "Lucas",
-=======
             "name": "Charles Taylor",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient7.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -178,11 +150,7 @@
         },
         {
             "id": 8,
-<<<<<<< HEAD
-            "name": "Daniel",
-=======
             "name": "Christopher White",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient8.png",
             "details": {
                 "eatingHabits": "2 Meals, 1 Snack",
@@ -201,11 +169,7 @@
         },
         {
             "id": 9,
-<<<<<<< HEAD
-            "name": "James",
-=======
             "name": "Joseph Harris",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient2.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
@@ -224,11 +188,7 @@
         },
         {
             "id": 10,
-<<<<<<< HEAD
-            "name": "Michael",
-=======
             "name": "Daniel Clark",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient10.png",
             "details": {
                 "eatingHabits": "2 Meals per day",
@@ -247,11 +207,7 @@
         },
         {
             "id": 11,
-<<<<<<< HEAD
-            "name": "Henry",
-=======
             "name": "George Lewis",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient11.png",
             "details": {
                 "eatingHabits": "4 Meals per day",
@@ -270,11 +226,7 @@
         },
         {
             "id": 12,
-<<<<<<< HEAD
-            "name": "Oliver",
-=======
             "name": "Matthew King",
->>>>>>> 24ce7fd (Change ui of therepist home)
             "avatar": "images/patientImages/patient12.png",
             "details": {
                 "eatingHabits": "3 Meals per day",
