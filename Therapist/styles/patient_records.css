@@ -7,7 +7,8 @@
 .patients-record-section h1 {
     font-size: 2.5rem;
     color: #1f2937;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
+    
 }
 
 .patients-grid {
@@ -19,11 +20,20 @@
 }
 
 .patient-card {
-    background-color: #e0e0e0;
-    padding: 30px;
-    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 50%; /* Make the container round */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Fixed size for round shape */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; /* Center align */
+    
 }
 
 .patient-card img {
@@ -43,10 +53,19 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+.patient-card a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;        /* Ensures the link takes on the text color */
+}
+
+.patient-card a:hover {
+    color: #4f46e5;  /* Change the color on hover */
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f2f2f1;
 }
 
 .navbar {
@@ -176,4 +195,11 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.patient-card h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; /* Choose weight depending on style preference */
+    font-size: 1.5rem;
+    color: #333;
 }

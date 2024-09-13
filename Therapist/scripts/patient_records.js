@@ -23,6 +23,8 @@ fetch('jsonfiles/patient_records.json')
             const patientLink = document.createElement('a');
             patientLink.href = `patient_details.html?id=${patient.id}`;
             patientLink.appendChild(patientCard);
+            patientLink.style.textDecoration = 'none';  // Remove underline
+            patientLink.style.color = 'inherit';     
 
             // Append image and name to the card
             patientCard.appendChild(patientImg);
