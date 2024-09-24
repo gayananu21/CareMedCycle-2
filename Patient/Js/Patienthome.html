@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care Med</title>
-    <link rel="stylesheet" href="StyleSheet\homestyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Care Med</title>
+  <link rel="stylesheet" href="/Patient/Js/StyleSheet/navbar.css">
+  <link rel="stylesheet" href="/Patient/Js/StyleSheet/patienthomestyle.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-               <!--Navigation bar Start from below -->
-               <nav>
-                <div class="logo">
-                    <img src="Images\Brian.png" alt="Care Med Logo">
-                    <span>CARE <span class="med">MED</span></span>
-                </div>
-                <ul class="nav-links">
-                    <button class="animatedbutton" >Home</button>
-                    <button class="animatedbutton">Therapist</button>
-                    <button class="animatedbutton">Contact Us</button>
-                </ul>
-                <button class="login-button">Logout</button>
-            </nav>
-            <!--Navigation end-->
-    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        });
+     </script>
 
     <!-- Welcome Section -->
     <section class="hero">
         <h1>Welcome <br> <span class="med">"Dineth"</span></h1>
-        
-        <!-- Question Section -->
+
         <div class="question-box">
             <h2>How are you feeling today?</h2>
             <div class="button-container">
-                <button class="cta-button">
-                    <span class="button-text">Great 🙂</span>
+                <button class="button great-button">
+                    <span class="button-text">Great 😊</span>
                 </button>
-                <button class="cta-buttonokay">
-                    <span class="button-text">Okay 🙂</span>
+                <button class="button okay-button">
+                    <span class="button-text">Okay 😐</span>
                 </button>
             </div>    
-            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <h2>Your Activities and Goals</h2>
+        
+        <div class="week-overview">
+            <h3>Last Week's Activities</h3><br>
+            <ul>
+                <li>Exercise: 5 sessions</li>
+                <li>Meditation: 4 sessions</li>
+                <li>Therapy Sessions: 2 sessions</li>
+            </ul>
+        </div>
+
+        <div class="goals">
+            <h3>Your Goals for This Week</h3> <br>
+            <ul>
+                <li>Exercise: 6 sessions</li>
+                <li>Meditation: 5 sessions</li>
+                <li>Therapy Sessions: 3 sessions</li>
+            </ul>
+        </div>
+
+        <div class="week-navigation">
+            <button class="button">Previous Weeks</button>
         </div>
     </section>
 

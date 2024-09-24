@@ -1,0 +1,97 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Header Styling */
+.animated-header {
+    position: fixed;
+    width: 100%;
+    top: -100px; /* Start off-screen for slide-in effect */
+    background-color: #81b1ce;
+    color: white;
+    z-index: 1000;
+    transition: all 0.5s ease;
+    animation: slideIn 1s forwards;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for Links */
+.navbar nav ul li a:hover {
+    color: #d3d3d3;
+}
+
+/* Profile Icon */
+.navbar .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Animation for Header Slide In */
+@keyframes slideIn {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* Change header size when scrolling */
+.shrink-header {
+    padding: 10px;
+    background-color: #5d99ba; /* Change background color on scroll */
+}
+
+.shrink-header .navbar .logo span {
+    font-size: 18px; /* Shrink the logo size */
+}
+
+.shrink-header .navbar nav ul li a {
+    font-size: 16px;
+}
+
+/* Smooth transition for header resizing */
+.animated-header {
+    transition: all 0.3s ease-in-out;
+}
