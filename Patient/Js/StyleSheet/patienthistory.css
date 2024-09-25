@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar {
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.select-box {
+    margin: 0 10px;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    background-color: #85c1e9;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.dates-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.date {
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+}
+
+.date:hover {
+    background-color: #e0f2ff;
+}
+
+.journal-entry {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.entry-positive {
+    background-color: #28a745;
+}
+
+.entry-stressed {
+    background-color: #dc3545;
+}
+
+.entry-neutral {
+    background-color: #ffc107;
+}
+
+.journal-summary {
+    width: 25%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.journal-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.entry {
+    margin-bottom: 15px;
+}
+
+.entry p {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

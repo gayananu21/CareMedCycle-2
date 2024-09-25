@@ -18,19 +18,19 @@ body {
 .animated-header {
     position: fixed;
     width: 100%;
-    top: -100px; /* Start off-screen for slide-in effect */
+    top: 0;
     background-color: #81b1ce;
     color: white;
     z-index: 1000;
     transition: all 0.5s ease;
-    animation: slideIn 1s forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 20px;
 }
 
 .navbar .logo span {
@@ -41,9 +41,11 @@ body {
 .navbar nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 .navbar nav ul li {
+    position: relative;
     margin: 0 15px;
 }
 
@@ -51,12 +53,52 @@ body {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
     transition: color 0.3s ease;
 }
 
 /* Hover Effect for Links */
 .navbar nav ul li a:hover {
     color: #d3d3d3;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #81b1ce;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 999;
+}
+
+.dropdown-content li {
+    padding: 10px 15px;
+}
+
+.dropdown-content li a {
+    color: white;
+    font-size: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #5d99ba;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Only show the dropdown when hovering over the parent */
 }
 
 /* Profile Icon */
@@ -77,14 +119,14 @@ body {
     }
 }
 
-/* Change header size when scrolling */
+/* Shrink header on scroll */
 .shrink-header {
     padding: 10px;
-    background-color: #5d99ba; /* Change background color on scroll */
+    background-color: #5d99ba;
 }
 
 .shrink-header .navbar .logo span {
-    font-size: 18px; /* Shrink the logo size */
+    font-size: 18px;
 }
 
 .shrink-header .navbar nav ul li a {

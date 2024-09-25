@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Journals Calendar</title>
+    <link rel="stylesheet" href="/Patient/Js/StyleSheet/patienthistory.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Calendar Section -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <select id="year-select" class="select-box"></select>
+                <select id="month-select" class="select-box"></select>
+            </div>
+            <div class="days">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="dates-grid" id="calendar-dates">
+                <!-- Dates will be generated dynamically here -->
+            </div>
+        </div>
+
+        <!-- Journal Summary Section -->
+        <div class="journal-summary">
+            <h3>Journal Summary (Past Week)</h3>
+            <div class="entry">
+                <p><strong>Sun:</strong> 10 AM - Feeling positive, good progress</p>
+            </div>
+            <div class="entry">
+                <p><strong>Mon:</strong> 9 AM - Regular exercise, feeling good</p>
+            </div>
+            <div class="entry">
+                <p><strong>Tue:</strong> 7 PM - Stressed about work</p>
+            </div>
+            <div class="entry">
+                <p><strong>Wed:</strong> 12 PM - Meeting with therapist, feeling better</p>
+            </div>
+            <div class="entry">
+                <p><strong>Thu:</strong> 8 AM - Meditation, feeling relaxed</p>
+            </div>
+            <div class="entry">
+                <p><strong>Fri:</strong> 10 PM - Great week overall</p>
+            </div>
+            <div class="entry">
+                <p><strong>Sat:</strong> 9 AM - Planning next week goals</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Patient/Js/StyleSheet/patienthistory.js"></script>
+
+</body>
+</html>

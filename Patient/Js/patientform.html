@@ -3,67 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Form</title>
-    <link rel="stylesheet" href="StyleSheet/formstyle.css">
+    <title>Daily Journal Entry</title>
+    <link rel="stylesheet" href="/Patient/Js/StyleSheet/formstyle.css">
+    <link rel="stylesheet" href="/Patient/Js/StyleSheet/navbar.css">
 </head>
 <body>
-    <script src="/Patient/Js/StyleSheet/navbar.js"></script>
-      
-</header>
-    <div class="container">
-        <form class="patient-form" id="patient-form">
-            <h1>Dineth's Journals</h1>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date">
-                </div>
-
-                <div class="form-group">
-                    <label for="time">Time</label>
-                    <input type="time" id="time" name="time">
-                </div>
+    <div class="journal-container">
+        <h1>Daily Journal Entry</h1>
+        <form id="journalForm" enctype="multipart/form-data">
+            
+            <!-- Emotions Section -->
+            <div class="form-group">
+                <label for="emotions">How do you feel today?</label>
+                <textarea id="emotions" name="emotions" rows="4" placeholder="Write about your emotions and state of mind"></textarea>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="state">State of Mind</label>
-                    <input type="text" id="state" name="state" placeholder="Great (Auto fill mode according to selection)">
-                </div>
-
-                <div class="form-group">
-                    <label for="sleeping">Sleeping Schedule</label>
-                    <textarea id="sleeping" name="sleeping" placeholder="Describe your sleeping schedule..."></textarea>
-                </div>
+            <!-- Sleeping Cycle Section -->
+            <div class="form-group">
+                <label for="sleep">How was your sleep?</label>
+                <select id="sleep" name="sleep">
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </select>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="meal">Meal Routine</label>
-                    <textarea id="meal" name="meal" placeholder="Describe your meal routine..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="other">Other</label>
-                    <textarea id="other" name="other" placeholder="Any other details..."></textarea>
-                </div>
+            <!-- Eating Habits Section -->
+            <div class="form-group">
+                <label for="eating">How were your eating habits today?</label>
+                <textarea id="eating" name="eating" rows="3" placeholder="Describe your meals, snacks, etc."></textarea>
             </div>
 
-            <div class="form-row">
-                <button type="button" class="cta-button" id="save-button">Save</button>
+            <!-- Upload Photo Section -->
+            <div class="form-group">
+                <label for="meal-photo">Upload a photo of what you ate:</label>
+                <input type="file" id="meal-photo" name="meal-photo" accept="image/*">
             </div>
+
+            <!-- Exercise Section -->
+            <div class="form-group">
+                <label for="exercise">Did you exercise today?</label>
+                <select id="exercise" name="exercise">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Water Intake Section -->
+            <div class="form-group">
+                <label for="water">How much water did you drink today? (in liters)</label>
+                <input type="number" id="water" name="water" step="0.1" placeholder="e.g., 2.5">
+            </div>
+
+            <!-- Stress Level Section -->
+            <div class="form-group">
+                <label for="stress-level">How stressed do you feel today? (1 - 10)</label>
+                <input type="number" id="stress-level" name="stress-level" min="1" max="10" placeholder="e.g., 5">
+            </div>
+
+            <!-- Daily Affirmation Section -->
+            <div class="form-group">
+                <label for="affirmation">Select your daily affirmation:</label>
+                <select id="affirmation" name="affirmation">
+                    <option value="I am strong and capable.">I am strong and capable.</option>
+                    <option value="I choose to be happy today.">I choose to be happy today.</option>
+                    <option value="I am in control of my life.">I am in control of my life.</option>
+                    <option value="I am worthy of love and respect.">I am worthy of love and respect.</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit Journal Entry</button>
+            </div>
+            
         </form>
     </div>
-
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <p>Form saved successfully!</p>
-        </div>
-    </div>
-
-    <script src="Js\app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        });
+     </script>
 </body>
 </html>
