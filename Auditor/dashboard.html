@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Auditor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .card .performance {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card canvas {
+            margin-top: 20px;
+        }
+        .logout-button {
+            background-color: #f44336; /* Red */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin: 10px;
+        }
+        .logout-button:hover {
+            background-color: #c62828; /* Darker Red */
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <header>
+        <h1>Auditor Dashboard</h1>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </header>
+
+    <nav>
+        <a href="home.html"><i class="fas fa-home"></i> Home</a>
+        <a href="edit_info.html"><i class="fas fa-user-edit"></i> Edit Personal Info</a>
+        <a href="therapist-overview.html"><i class="fas fa-user-md"></i> Therapist Overview</a>
+        <a href="audit-logs.html"><i class="fas fa-file-alt"></i> Audit Logs</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Number of Patients per Therapist -->
+        <div class="card">
+            <h2>Therapist Performance (Number of Patients)</h2>
+            <div class="performance">
+                <p><strong>Therapist A:</strong> 80 patients</p>
+                <p><strong>Therapist B:</strong> 50 patients</p>
+                <p><strong>Therapist C:</strong> 70 patients</p>
+            </div>
+            <canvas id="patientsChart"></canvas>
+        </div>
+
+        <!-- Types of Cases Managed by Therapists -->
+        <div class="card">
+            <h2>Case Types Handled by Therapists</h2>
+            <p>Distribution of cases handled by therapists:</p>
+            <canvas id="caseTypesChart"></canvas>
+        </div>
+
+        <!-- Consultation Duration per Therapist -->
+        <div class="card">
+            <h2>Consultation Duration (Average)</h2>
+            <p>Average time spent per consultation by therapist:</p>
+            <canvas id="consultationChart"></canvas>
+        </div>
+
+    </div>
+
+    <script>
+        // Number of Patients per Therapist
+        var ctx = document.getElementById('patientsChart').getContext('2d');
+        var patientsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Therapist A', 'Therapist B', 'Therapist C'],
+                datasets: [{
+                    label: 'Number of Patients',
+                    data: [80, 50, 70],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            }
+        });
+
+        // Case Types Handled by Therapists
+        var ctx2 = document.getElementById('caseTypesChart').getContext('2d');
+        var caseTypesChart = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['CBT', 'Family Therapy', 'Psychodynamic Therapy'],
+                datasets: [{
+                    data: [40, 35, 25],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            }
+        });
+
+        // Consultation Duration per Therapist
+        var ctx3 = document.getElementById('consultationChart').getContext('2d');
+        var consultationChart = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Therapist A', 'Therapist B', 'Therapist C'],
+                datasets: [{
+                    label: 'Consultation Duration (minutes)',
+                    data: [45, 50, 35],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+            
+        });
+
+        
+
+        // Logout function
+        function logout() {
+            // Here you can implement logout logic (e.g., clearing session, etc.)
+            // Redirecting to the login page
+            window.location.href = 'login.html'; // Change to your login page URL
+        }
+    </script>
+
+    
+
+</body>
+</html>
