@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Profile</title>
-    <link rel="stylesheet" href="StyleSheet\patientprofile.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Dashboard</title>
+  <link rel="stylesheet" href="/Patient/Js/StyleSheet/patientprofile.css">
+  <link rel="stylesheet" href="/Patient/Js/StyleSheet/navbar.css">
 </head>
 <body>
-    <header>
-        <!-- Navigation bar Start -->
-        <nav>
-            <div class="logo">
-                <img src="Images\Brian.png" alt="Care Med Logo">
-                <span>CARE <span class="med">MED</span></span>
-            </div>
-            <ul class="nav-links">
-                <button class="animatedbutton">Home</button>
-                <button class="animatedbutton">My Journals</button>
-            </ul>
-            <div class="profile-icon">
-                <img src="images/profile-icon.png" alt="Profile">
-            </div>
-        </nav>
-        <!-- Navigation end -->
-    </header>
 
-    <div class="container">
-        <div class="profilepicture">
-            <img src="Images\patient2.png" alt="Profile Picture">
-        </div>
-        <h1>Dineth</h1>
-        <form class="patient-form" id="patient-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
-            </div>
-            <div class="form-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
-            </div>
-            <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Enter your age">
-            </div>
-            <button type="button" class="cta-button" id="save-button">Save</button>
+  <!-- Profile Overview Section -->
+  <div class="profile-container">
+    <div class="profile-overview">
+      <div class="profile-card">
+        <img src="profile-pic.png" alt="User Profile Picture" class="profile-pic">
+        <h2>Dineth</h2>
+        <button class="edit-button">Edit Profile</button>
+      </div>
+
+      <!-- Profile Information -->
+      <div class="profile-info">
+        <h3>Profile Information</h3>
+        <form class="profile-form">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Enter your address">
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" placeholder="Enter your mobile number">
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" id="age" placeholder="Enter your age">
+          </div>
+
+          <button type="submit" class="save-button">Save Changes</button>
         </form>
+      </div>
     </div>
 
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <p>Profile Edited saved successfully!</p>
-        </div>
+    <!-- Weekly Activities Section -->
+    <div class="weekly-activities">
+      <h3>Weekly Activities Overview</h3>
+      <!-- Bar chart canvas -->
+      <canvas id="weeklyActivitiesChart" width="400" height="200"></canvas>
+      <!-- Text summary for additional context -->
+      <div class="activity-summary">
+        <p>Exercise: 5 Sessions</p>
+        <p>Meditation: 4 Sessions</p>
+        <p>Therapy: 2 Sessions</p>
+      </div>
     </div>
 
-    <script src="Js/app.js"></script>
+    <!-- Journal Summary Section -->
+    <div class="journal-summary">
+      <h3>Journal Summary</h3>
+      <div class="journal-entry">
+        <p><strong>Date:</strong> 29th September</p>
+        <p><strong>Mood:</strong> Happy</p>
+        <p><strong>Sleep Quality:</strong> Good</p>
+        <p><strong>Stress Level:</strong> 3/10</p>
+      </div>
+      <div class="journal-entry">
+        <p><strong>Date:</strong> 28th September</p>
+        <p><strong>Mood:</strong> Anxious</p>
+        <p><strong>Sleep Quality:</strong> Average</p>
+        <p><strong>Stress Level:</strong> 6/10</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include the external JavaScript file -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/Patient/Js/StyleSheet/chart.js"></script> <!-- Link to the external JS file -->
+  
 </body>
 </html>
