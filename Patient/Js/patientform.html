@@ -11,22 +11,22 @@
 
     <div class="journal-container">
         <h1>Daily Journal Entry</h1>
-        <form id="journalForm" enctype="multipart/form-data">
+        <form id="journalForm" enctype="multipart/form-data" class="journal-grid">
             
             <!-- Date Picker Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="date">Select the date for your journal entry:</label>
                 <input type="date" id="date" name="date">
             </div>
 
             <!-- Emotions Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="emotions">How do you feel today?</label>
                 <textarea id="emotions" name="emotions" rows="4" placeholder="Write about your emotions and state of mind"></textarea>
             </div>
 
             <!-- Sleeping Cycle Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="sleep">How was your sleep?</label>
                 <select id="sleep" name="sleep">
                     <option value="good">Good</option>
@@ -36,19 +36,19 @@
             </div>
 
             <!-- Eating Habits Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="eating">How were your eating habits today?</label>
                 <textarea id="eating" name="eating" rows="3" placeholder="Describe your meals, snacks, etc."></textarea>
             </div>
 
             <!-- Upload Photo Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="meal-photo">Upload a photo of what you ate:</label>
                 <input type="file" id="meal-photo" name="meal-photo" accept="image/*">
             </div>
 
             <!-- Exercise Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="exercise">Did you exercise today?</label>
                 <select id="exercise" name="exercise">
                     <option value="yes">Yes</option>
@@ -57,19 +57,19 @@
             </div>
 
             <!-- Water Intake Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="water">How much water did you drink today? (in liters)</label>
                 <input type="number" id="water" name="water" step="0.1" placeholder="e.g., 2.5">
             </div>
 
             <!-- Stress Level Section -->
-            <div class="form-group">
+            <div class="form-card">
                 <label for="stress-level">How stressed do you feel today? (1 - 10)</label>
                 <input type="number" id="stress-level" name="stress-level" min="1" max="10" placeholder="e.g., 5">
             </div>
 
             <!-- Daily Affirmation Section -->
-            <div class="form-group">
+            <div class="form-card full-width">
                 <label for="affirmation">Select your daily affirmation:</label>
                 <select id="affirmation" name="affirmation">
                     <option value="I am strong and capable.">I am strong and capable.</option>
@@ -80,12 +80,13 @@
             </div>
 
             <!-- Submit Button -->
-            <div class="form-group">
+            <div class="form-card no-box">
                 <button type="submit">Submit Journal Entry</button>
             </div>
             
         </form>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('navbar.html')

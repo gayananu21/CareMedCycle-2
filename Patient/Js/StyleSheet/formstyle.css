@@ -12,45 +12,58 @@ body {
     padding: 0;
 }
 
-/* Header height adjustment */
+/* Journal Container */
 .journal-container {
-    background-color: white;
     padding: 30px;
+    width: 100%;
+    max-width: 900px; /* Adjusted width for grid */
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Form Grid */
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Spacing between cards */
+}
+
+/* Form Card */
+.form-card {
+    background-color: white;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    margin: 150px auto; /* Adjust margin to create space for the header */
-    animation: fadeIn 0.8s ease-out forwards;
+    text-align: left;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-}
-
-textarea, select, input[type="file"], input[type="number"] {
+/* Input and Textarea Styling */
+textarea, select, input[type="file"], input[type="number"], input[type="date"] {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
+/* Label Styling */
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Affirmation Section Centering */
+.form-card.full-width {
+    grid-column: span 2; /* This will make the affirmation card take the full row width */
+    text-align: center;  /* Center the content inside */
+}
+
+/* Submit Button Styling */
 button[type="submit"] {
-    width: 100%;
-    padding: 15px;
+    padding: 15px 50px;
     font-size: 1.2rem;
     background-color: #81b1ce;
     color: white;
@@ -58,20 +71,18 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center; /* Center the button */
 }
 
 button[type="submit"]:hover {
     background-color: #5d99ba;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Remove the card styling for the submit button */
+.no-box {
+    box-shadow: none;
+    background-color: transparent;
+    grid-column: span 2; /* This will make the button span across two columns */
+    text-align: center; /* Centering the button */
 }
