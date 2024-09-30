@@ -16,51 +16,74 @@
                     document.body.insertAdjacentHTML('afterbegin', data);
                 });
         });
-     </script>
+    </script>
 
-    <!-- Welcome Section -->
-    <section class="hero">
-        <h1>Welcome <br> <span class="med">"Dineth"</span></h1>
+    <!-- Main content container -->
+    <div class="content-container">
+        <!-- Welcome Section -->
+        <section class="hero">
+            <h1>Welcome <br> <span class="med">"Dineth"</span></h1>
 
-        <div class="question-box">
-            <h2>How are you feeling today?</h2>
-            <div class="button-container">
-                <button class="button great-button">
-                    <span class="button-text">Great 😊</span>
-                </button>
-                <button class="button okay-button">
-                    <span class="button-text">Okay 😐</span>
-                </button>
-            </div>    
-        </div>
-    </section>
+            <div class="question-box">
+                <h2>How are you feeling today?</h2>
+                <div class="button-container">
+                    <button class="button great-button">
+                        <span class="button-text">Great 😊</span>
+                    </button>
+                    <button class="button okay-button">
+                        <span class="button-text">Okay 😐</span>
+                    </button>
+                </div>    
+            </div>
+        </section>
 
-    <!-- Dashboard Section -->
-    <section class="dashboard">
-        <h2>Your Activities and Goals</h2>
-        
-        <div class="week-overview">
-            <h3>Last Week's Activities</h3><br>
-            <ul>
-                <li>Exercise: 5 sessions</li>
-                <li>Meditation: 4 sessions</li>
-                <li>Therapy Sessions: 2 sessions</li>
-            </ul>
-        </div>
+        <!-- Dashboard Section -->
+        <section class="dashboard">
+            <h2>
+                <span>Y</span><span>o</span><span>u</span><span>r</span>
+                <span> </span>
+                <span>A</span><span>c</span><span>t</span><span>i</span><span>v</span><span>i</span><span>t</span><span>i</span><span>e</span><span>s</span>
+                <span> </span>
+                <span>a</span><span>n</span><span>d</span>
+                <span> </span>
+                <span>G</span><span>o</span><span>a</span><span>l</span><span>s</span>
+            </h2>
 
-        <div class="goals">
-            <h3>Your Goals for This Week</h3> <br>
-            <ul>
-                <li>Exercise: 6 sessions</li>
-                <li>Meditation: 5 sessions</li>
-                <li>Therapy Sessions: 3 sessions</li>
-            </ul>
-        </div>
+            <div class="activity-goals-grid">
+                <!-- Last Week's Activities -->
+                <div class="card">
+                    <h3>Exercise</h3>
+                    <p>5 sessions</p>
+                </div>
+                <div class="card">
+                    <h3>Meditation</h3>
+                    <p>4 sessions</p>
+                </div>
+                <div class="card">
+                    <h3>Therapy Sessions</h3>
+                    <p>2 sessions</p>
+                </div>
 
-        <div class="week-navigation">
-            <button class="button">Previous Weeks</button>
-        </div>
-    </section>
+                <!-- Goals for This Week -->
+                <div class="card">
+                    <h3>Exercise</h3>
+                    <p>6 sessions</p>
+                </div>
+                <div class="card">
+                    <h3>Meditation</h3>
+                    <p>5 sessions</p>
+                </div>
+                <div class="card">
+                    <h3>Therapy Sessions</h3>
+                    <p>3 sessions</p>
+                </div>
+            </div>
+
+            <div class="week-navigation">
+                <button class="button">Previous Weeks</button>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
