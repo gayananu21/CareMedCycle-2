@@ -26,10 +26,7 @@
             </div>
         </div>
         <div class="profile-icon">
-            <a href="therapistProfile.html">
-            <img src="Images/profile-icon.png" alt="Profile">
-        </a>
-            
+            <img src="images/profile-icon.png" alt="Profile">
         </div>
     </div>
 
@@ -42,22 +39,27 @@
             <!-- Form fields for session details -->
             <div class="form-field">
                 <label for="title">Title:</label>
-                <input type="text" id="title" value="Session 1">
+                <input type="text" id="title" value="">
             </div>
 
             <div class="form-field">
                 <label for="date">Date:</label>
-                <input type="text" id="date" value="12/24/2024">
+                <input type="date" id="date" value="">
             </div>
 
             <div class="form-field">
-                <label for="time">Time:</label>
-                <input type="text" id="time" value="8:30 PM - 10:30 PM">
+                <label for="time-start">Start Time:</label>
+                <input type="time" id="time-start">
+            </div>
+
+            <div class="form-field">
+                <label for="time-end">End Time:</label>
+                <input type="time" id="time-end">
             </div>
 
             <div class="form-field">
                 <label for="location">Location:</label>
-                <input type="text" id="location" value="Care Med Clinic">
+                <input type="text" id="location" value="">
             </div>
 
             <!-- Selected patients section with remove option -->
@@ -80,70 +82,20 @@
             <h2>Add More Patients</h2>
             <div id="available-patients" class="available-patients">
                 <!-- Patients available for dragging -->
-                <div class="patient" draggable="true" data-id="1">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient1.png" alt="Patient 1">
-                    <span>John</span>
-                </div>
-                <div class="patient" draggable="true" data-id="2">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 2">
-                    <span>Michael</span>
-                </div>
-                <div class="patient" draggable="true" data-id="3">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient3.png" alt="Patient 3">
-                    <span>David</span>
-                </div>
-                <div class="patient" draggable="true" data-id="4">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 4">
-                    <span>James</span>
-                </div>
-                <div class="patient" draggable="true" data-id="5">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient7.png" alt="Patient 5">
-                    <span>Robert</span>
-                </div>
-                <div class="patient" draggable="true" data-id="6">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient8.png" alt="Patient 6">
-                    <span>William</span>
-                </div>
-                <div class="patient" draggable="true" data-id="10">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient10.png" alt="Patient 3">
-                    <span>Christopher</span>
-                </div>
-                <div class="patient" draggable="true" data-id="11">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 3">
-                    <span>Daniel</span>
-                </div>
-                <div class="patient" draggable="true" data-id="12">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 3">
-                    <span>Matthew</span>
-                </div>
-                <div class="patient" draggable="true" data-id="10">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient10.png" alt="Patient 3">
-                    <span>Anthony</span>
-                </div>
-                <div class="patient" draggable="true" data-id="11">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 3">
-                    <span>Joshua</span>
-                </div>
-                <div class="patient" draggable="true" data-id="12">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 3">
-                    <span>Andrew Mathews</span>
-                </div>
-                
             </div>
         </div>
     </div>
+
+<!-- Cancel Confirmation Modal -->
+<div id="cancel-confirmation-modal" class="modal hidden">
+    <div class="modal-content">
+        <p id="cancel-message-text">Do you want to cancel editing?</p>
+        <div class="modal-actions">
+            <button id="cancel-ok-btn">OK</button>
+            <button id="cancel-cancel-btn">Cancel</button>
+        </div>
+    </div>
+</div>
 
     <script src="scripts/editSession.js"></script>
 </body>

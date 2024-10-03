@@ -29,7 +29,6 @@
             <a href="therapistProfile.html">
             <img src="Images/profile-icon.png" alt="Profile">
         </a>
-            
         </div>
     </div>
 
@@ -42,22 +41,22 @@
             <!-- Form fields for session details -->
             <div class="form-field">
                 <label for="title">Title:</label>
-                <input type="text" id="title" placeholder="Enter session title">
+                <input type="text" id="title" placeholder="Enter session title" required>
             </div>
 
             <div class="form-field">
                 <label for="date">Date:</label>
-                <input type="date" id="date">
+                <input type="date" id="date" required>
             </div>
 
             <div class="form-field">
                 <label for="time">Time:</label>
-                <input type="time" id="time-start"> to <input type="time" id="time-end">
+                <input type="time" id="time-start" required> to <input type="time" id="time-end" required>
             </div>
 
             <div class="form-field">
                 <label for="location">Location:</label>
-                <input type="text" id="location" placeholder="Enter location">
+                <input type="text" id="location" placeholder="Enter location" required>
             </div>
 
             <!-- Selected patients section starts empty -->
@@ -71,7 +70,7 @@
             <!-- Buttons for save and cancel -->
             <div class="form-actions">
                 <button class="save-btn" id="save-session">Save</button>
-                <button class="cancel-btn">Cancel</button>
+                <button class="cancel-btn" id="cancel-session">Cancel</button>
             </div>
         </div>
 
@@ -79,70 +78,27 @@
         <div class="add-more-patients-section">
             <h2>Add More Patients</h2>
             <div id="available-patients" class="available-patients">
-                <!-- Patients available for dragging -->
-                <div class="patient" draggable="true" data-id="1">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient1.png" alt="Patient 1">
-                    <span>John</span>
-                </div>
-                <div class="patient" draggable="true" data-id="2">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 2">
-                    <span>Michael</span>
-                </div>
-                <div class="patient" draggable="true" data-id="3">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient3.png" alt="Patient 3">
-                    <span>David</span>
-                </div>
-                <div class="patient" draggable="true" data-id="4">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 4">
-                    <span>James</span>
-                </div>
-
-                <div class="patient" draggable="true" data-id="5">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient1.png" alt="Patient 5">
-                    <span> Anderson</span>
-                </div>
-                <div class="patient" draggable="true" data-id="6">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient2.png" alt="Patient 6">
-                    <span>William</span>
-                </div>
-                <div class="patient" draggable="true" data-id="7">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient3.png" alt="Patient 7">
-                    <span>Charles</span>
-                </div>
-                <div class="patient" draggable="true" data-id="8">
-                    <i class="fas fa-plus-circle add-icon"></i>
-                    <img src="images/patientImages/patient4.png" alt="Patient 8">
-                    <span>Joseph</span>
-                </div>
-                <!-- Add more patients here as necessary -->
+                <!-- Patients will be loaded dynamically from the database -->
             </div>
         </div>
     </div>
 
-<!-- Save Confirmation Popup -->
-<div id="save-popup" class="popup hidden">
-<p>Do you want to save changes?</p>
-<div class="popup-actions">
-    <button id="save-no-btn">No</button>
-    <button id="save-yes-btn">Yes</button>
-</div>
-</div>
+    <!-- Popup elements for save and cancel confirmation -->
+    <div id="save-popup" class="popup hidden">
+        <p>Do you want to save changes?</p>
+        <div class="popup-actions">
+            <button id="save-no-btn">No</button>
+            <button id="save-yes-btn">Yes</button>
+        </div>
+    </div>
 
-<!-- Cancel Confirmation Popup -->
-<div id="cancel-popup" class="popup hidden">
-<p>Do you want to cancel creating this session?</p>
-<div class="popup-actions">
-    <button id="cancel-no-btn">No</button>
-    <button id="cancel-yes-btn">Yes</button>
-</div>
-</div>
+    <div id="cancel-popup" class="popup hidden">
+        <p>Do you want to cancel creating this session?</p>
+        <div class="popup-actions">
+            <button id="cancel-no-btn">No</button>
+            <button id="cancel-yes-btn">Yes</button>
+        </div>
+    </div>
 
     <script src="scripts/addNewSession.js"></script>
 </body>

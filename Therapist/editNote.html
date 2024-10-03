@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Note</title>
     <link rel="stylesheet" href="styles/editNote.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -28,82 +27,60 @@
         </div>
         <div class="profile-icon">
             <a href="therapistProfile.html">
-            <img src="Images/profile-icon.png" alt="Profile">
-        </a>
-            
+                <img src="Images/profile-icon.png" alt="Profile">
+            </a>
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content for Editing Notes -->
     <div class="container">
-        <div class="note-form">
-            <h1>Edit Note</h1>
-            <!-- Added Journal Icon -->
-            <i class="fas fa-book"></i>
-            <form id="edit-note-form">
-                <div class="form-group">
-                    <label for="date">Date:</label>
-                    <!-- Set default date value to 12/24/2024 -->
-                    <input type="date" id="date" name="date" value="2024-12-24" required> 
-                </div>
-                <div class="form-group">
-                    <label for="note">Note:</label>
-                    <textarea id="note" name="note" rows="4" required>Patient is calm and quiet after the session and progressing on improving his sleeping hours etc...</textarea>
-                </div>
+        <h1>Edit Note</h1>
+        <form id="edit-note-form">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <textarea id="note" name="note" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="note-type">Note Type:</label>
+                <select id="note-type" name="note-type">
+                    <option value="Depression">Depression</option>
+                    <option value="Generalized Anxiety Disorder (GAD)">Generalized Anxiety Disorder (GAD)</option>
+                    <option value="Schizophrenia">Schizophrenia</option>
+                    <option value="Post-Traumatic Stress Disorder (PTSD)">Post-Traumatic Stress Disorder (PTSD)</option>
+                    <option value="Borderline Personality Disorder">Borderline Personality Disorder</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <!-- Custom note type input -->
+            <div class="form-group custom-note-type" style="display: none;">
+                <label for="custom-note-type-input">Custom Note Type:</label>
+                <input type="text" id="custom-note-type-input" name="custom-note-type" placeholder="Enter custom note type">
+            </div>
 
-                <!-- Patient Type Selection -->
-                <div class="form-group">
-                    <label for="patient-type">Patient Type:</label>
-                    <select id="patient-type" name="patient-type">
-                        <option value="Depression">Depression</option>
-                        <option value="Generalized Anxiety Disorder (GAD)">Generalized Anxiety Disorder (GAD)</option>
-                        <option value="Schizophrenia">Schizophrenia</option>
-                        <option value="Post-Traumatic Stress Disorder (PTSD)">Post-Traumatic Stress Disorder (PTSD)</option>
-                        <option value="Borderline Personality Disorder">Borderline Personality Disorder</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <!-- Input field for custom patient type (only shown when "Other" is selected) -->
-                <div class="form-group custom-patient-type" style="display: none;">
-                    <label for="custom-patient-type">Custom Patient Type:</label>
-                    <input type="text" id="custom-patient-type-input" name="custom-patient-type" placeholder="Enter custom patient type">
-                </div>
-
-                <!-- Action buttons -->
-                <div class="form-actions">
-                    <button type="button" class="cancel-btn">Cancel</button>
-                    <button type="button" class="save-btn">Save</button>
-                </div>
-            </form>
-        </div>
+            <!-- Action buttons -->
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+            </div>
+        </form>
     </div>
 
     <!-- Success Popup -->
     <div id="success-popup" class="popup hidden">
-        <p>Note Updated Successfully</p>
-        <button id="popup-close-btn" class="close-btn">OK</button>
+        <p>Note updated successfully!</p>
+        <button id="success-close-btn" class="close-btn">OK</button>
     </div>
 
-    <!-- Cancel Confirmation Popup -->
-    <div id="cancel-popup" class="popup hidden">
-        <p>Do you want to skip editing the note?</p>
-        <div class="popup-actions">
-            <button id="cancel-no-btn">No</button>
-            <button id="cancel-yes-btn">Yes</button>
-        </div>
+    <!-- Error Popup -->
+    <div id="error-popup" class="popup hidden">
+        <p id="error-message">Error updating note. Please try again.</p>
+        <button id="error-close-btn" class="close-btn">OK</button>
     </div>
 
-    <!-- Save Confirmation Popup -->
-    <div id="confirmation-popup" class="popup hidden">
-        <p>Do you want to save changes?</p>
-        <div class="popup-actions">
-            <button id="save-no-btn">No</button>
-            <button id="save-yes-btn">Yes</button>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="scripts/editNote.js"></script>
 </body>
 </html>

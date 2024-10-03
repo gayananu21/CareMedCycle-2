@@ -27,7 +27,8 @@
             const password = document.getElementById('password').value;
 
             if (username === "patient1" && password === "admin") {
-                alert("Welcome to Patient!");
+                window.location.href = "../Patient/Js/patienthome.html"; 
+
             } else if (username === "therapist1" && password === "therapist1") {
                 window.location.href = "../Therapist/therapist_home.html"; 
             } else {

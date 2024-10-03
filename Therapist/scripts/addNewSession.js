@@ -1,6 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     let draggedPatient = null;
 
+    // Fetch available patients from the database and populate the available patients section
+    fetch('http://localhost/www/cycle-2/CareMedCycle-2/Therapist/php/get_patients.php')
+        .then(response => response.json())
+        .then(patients => {
+            const availablePatients = document.querySelector('#available-patients');
+            availablePatients.innerHTML = '';
+
+            patients.forEach(patient => {
+                const patientDiv = document.createElement('div');
+                patientDiv.classList.add('patient');
+                patientDiv.setAttribute('draggable', 'true');
+                patientDiv.setAttribute('data-id', patient.id);
+                patientDiv.innerHTML = `
+                    <i class="fas fa-plus-circle add-icon"></i>
+                    <img src="${patient.profile_image}" alt="${patient.name}">
+                    <span>${patient.name}</span>
+                `;
+                availablePatients.appendChild(patientDiv);
+
+                // Set up drag event and click event for each patient
+                patientDiv.addEventListener('dragstart', (e) => {
+                    draggedPatient = e.target;
+                    draggedPatient.classList.add('dragging');
+                });
+
+                patientDiv.addEventListener('dragend', (e) => {
+                    draggedPatient.classList.remove('dragging');
+                    draggedPatient = null;
+                });
+
+                patientDiv.querySelector('.add-icon').addEventListener('click', () => {
+                    addPatientToSelected(patientDiv);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching patients:', error);
+        });
+
     // Function to add a patient to the selected patients area
     function addPatientToSelected(patientElement) {
         const clonedPatient = patientElement.cloneNode(true);
@@ -48,35 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial setup for drag events and click to add
-    document.querySelectorAll('.available-patients .patient').forEach(patient => {
-        patient.addEventListener('dragstart', (e) => {
-            draggedPatient = e.target;
-            draggedPatient.classList.add('dragging');
-        });
-
-        patient.addEventListener('dragend', (e) => {
-            draggedPatient.classList.remove('dragging');
-            draggedPatient = null;
-        });
-
-        patient.querySelector('.add-icon').addEventListener('click', () => {
-            addPatientToSelected(patient);
-        });
-    });
-
-    // Removed the preselecting block
-    // This block is intentionally commented out to avoid preselecting patients
-    /*
-    const availablePatients = document.querySelectorAll('.available-patients .patient');
-    for (let i = 0; i < 3; i++) {
-        addPatientToSelected(availablePatients[i]);
-    }
-    */
-
-    // Drag and drop functionality
+    // Drag and drop functionality for selected patients
     const selectedPatients = document.querySelector('#selected-patients');
-
     selectedPatients.addEventListener('dragover', (e) => {
         e.preventDefault();
     });
@@ -88,50 +100,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Save button with confirmation and alert bar navigation
+    // Save button logic
     const saveButton = document.querySelector('.save-btn');
     saveButton.addEventListener('click', (e) => {
         e.preventDefault();
-        const confirmSave = confirm('Do you want to save changes?');
-        if (confirmSave) {
-            alert('Session created successfully!');
-            window.location.href = 'upcomingSessions.html'; // Redirect to upcoming sessions
+
+        // Collect form data
+        const sessionData = {
+            title: document.querySelector('#title').value,
+            date: document.querySelector('#date').value,
+            time_start: document.querySelector('#time-start').value,
+            time_end: document.querySelector('#time-end').value,
+            location: document.querySelector('#location').value,
+            patients: Array.from(document.querySelectorAll('#selected-patients .patient')).map(patient => patient.getAttribute('data-id'))
+        };
+
+        if (!sessionData.title || !sessionData.date || !sessionData.time_start || !sessionData.time_end || !sessionData.location || sessionData.patients.length === 0) {
+            alert('Please fill all fields and add at least one patient.');
+            return;
+        }
+
+        // Send the data to the backend to save in the database
+        fetch('http://localhost/www/cycle-2/CareMedCycle-2/Therapist/php/add_session.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sessionData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Session created successfully!');
+                window.location.href = 'upcomingSessions.html'; // Redirect to upcoming sessions
+            } else {
+                alert(`Error creating session: ${result.message}`);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error creating session. Please try again.');
+        });
+    });
+
+    // Cancel button logic
+    const cancelButton = document.querySelector('.cancel-btn');
+    cancelButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const confirmCancel = confirm('Do you want to cancel creating this session?');
+        if (confirmCancel) {
+            window.location.href = 'therapist_home.html'; // Redirect to home
         }
     });
-});
-// Popup elements
-const savePopup = document.getElementById('save-session');
-const cancelPopup = document.getElementById('cancel-btn');
-
-// Save button click -> Show save confirmation popup
-const saveButton = document.getElementById('save-session');
-saveButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    savePopup.classList.remove('hidden'); // Show popup
-});
-
-// Cancel button click -> Show cancel confirmation popup
-const cancelButton = document.getElementById('cancel-session');
-cancelButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    cancelPopup.classList.remove('hidden'); // Show popup
-});
-
-// Popup actions for saving
-document.getElementById('save-no-btn').addEventListener('click', () => {
-    savePopup.classList.add('hidden');
-});
-
-document.getElementById('save-yes-btn').addEventListener('click', () => {
-    alert('Session saved successfully!');
-    window.location.href = 'upcomingSessions.html'; // Redirect to upcoming sessions
-});
-
-// Popup actions for canceling
-document.getElementById('cancel-no-btn').addEventListener('click', () => {
-    cancelPopup.classList.add('hidden');
-});
-
-document.getElementById('cancel-yes-btn').addEventListener('click', () => {
-    window.location.href = 'therapist_home.html'; // Redirect to therapist home
 });

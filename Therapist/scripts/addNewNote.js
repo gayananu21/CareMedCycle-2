@@ -1,58 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const patientTypeSelect = document.getElementById('patient-type');
-    const customPatientTypeField = document.querySelector('.custom-patient-type');
-    const form = document.getElementById('add-note-form');
-    const saveButton = document.querySelector('.save-btn');
-    const cancelButton = document.querySelector('.cancel-btn');
-    const confirmationPopup = document.getElementById('confirmation-popup');
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const patientId = urlParams.get('patient_id'); // Get patient_id from the URL
+
+    if (!patientId) {
+        console.error('No patient ID found in URL.');
+        return;
+    }
+
+    const addNoteForm = document.getElementById('add-note-form');
     const successPopup = document.getElementById('success-popup');
-    const yesButton = document.getElementById('yes-btn');
-    const noButton = document.getElementById('no-btn');
-    const closeButton = document.getElementById('popup-close-btn');
+    const errorPopup = document.getElementById('error-popup');
+    const errorMessage = document.getElementById('error-message');
+    const successCloseBtn = document.getElementById('success-close-btn');
+    const errorCloseBtn = document.getElementById('error-close-btn');
 
-    // Show custom patient type input when "Other" is selected
-    patientTypeSelect.addEventListener('change', () => {
-        if (patientTypeSelect.value === 'Other') {
-            customPatientTypeField.style.display = 'block';
-        } else {
-            customPatientTypeField.style.display = 'none';
-        }
-    });
-
-    // Cancel button event
-    cancelButton.addEventListener('click', (e) => {
-        const confirmCancel = confirm('Do you want to skip adding a new note?');
-        if (confirmCancel) {
-            window.location.href = 'patient_records.html'; // Redirect to patient records page
-        }
-    });
-
-    // Save button (shows confirmation popup)
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        confirmationPopup.classList.remove('hidden'); // Show confirmation popup
-    });
-
-    // Yes button in confirmation popup
-    yesButton.addEventListener('click', () => {
-        confirmationPopup.classList.add('hidden');
-        successPopup.classList.remove('hidden'); // Show success message
-
-        // Simulate success and redirect to patient records after a delay
-        setTimeout(() => {
-            successPopup.classList.add('hidden');
-            window.location.href = 'patient_records.html'; // Redirect to patient records page
-        }, 1500); // Delay for 1.5 seconds
-    });
-
-    // No button in confirmation popup
-    noButton.addEventListener('click', () => {
-        confirmationPopup.classList.add('hidden'); // Close confirmation popup
-    });
-
-    // Close the success popup
-    closeButton.addEventListener('click', () => {
+    // Event listener for closing the popups
+    successCloseBtn.addEventListener('click', () => {
         successPopup.classList.add('hidden');
-        window.location.href = 'patient_records.html';
+        window.location.href = `patient_details.html?id=${patientId}`; // Redirect back to patient details
+    });
+
+    errorCloseBtn.addEventListener('click', () => {
+        errorPopup.classList.add('hidden');
+    });
+
+    addNoteForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const noteData = {
+            date: document.getElementById('date').value,
+            note: document.getElementById('note').value,
+            patient_type: document.getElementById('patient-type').value,
+            patient_id: patientId // Include patient ID
+        };
+
+        fetch('http://localhost/www/cycle-2/CareMedCycle-2/Therapist/php/add_note.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(noteData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                successPopup.classList.remove('hidden'); // Show success popup
+                successPopup.classList.add('show');
+            } else {
+                errorMessage.textContent = `Error adding note: ${result.message}`;
+                errorPopup.classList.remove('hidden'); // Show error popup
+                errorPopup.classList.add('show');
+            }
+        })
+        .catch(error => {
+            errorMessage.textContent = 'Error adding note. Please try again later.';
+            errorPopup.classList.remove('hidden'); // Show error popup
+            errorPopup.classList.add('show');
+            console.error('Error:', error);
+        });
     });
 });

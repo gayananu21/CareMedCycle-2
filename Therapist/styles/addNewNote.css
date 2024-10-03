@@ -274,3 +274,49 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
+
+/* General styling for the popups */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.popup p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.popup .close-btn {
+    background-color: #4CAF50; /* Green for success */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.popup .close-btn:hover {
+    opacity: 0.9;
+}
+
+/* Error Popup Styling */
+#error-popup .close-btn {
+    background-color: #e74c3c; /* Red for error */
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaRe Med - Patient Records</title>
-     <!-- Add Google Fonts -->
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/patient_records.css">
 </head>
 <body>
@@ -28,9 +28,8 @@
         </div>
         <div class="profile-icon">
             <a href="therapistProfile.html">
-            <img src="Images/profile-icon.png" alt="Profile">
-        </a>
-            
+                <img src="Images/profile-icon.png" alt="Profile">
+            </a>
         </div>
     </div>
 
@@ -42,7 +41,46 @@
         </div>
     </div>
 
-    <!-- Link the external JavaScript file -->
-    <script src="scripts/patient_records.js"></script>
+    <!-- JavaScript to Fetch Patients Data from PHP -->
+    <script>
+        // Fetch patient data from the PHP backend
+        fetch('http://localhost/www/cycle-2/CareMedCycle-2/Therapist/php/get_patients.php')
+            .then(response => response.json())
+            .then(data => {
+                const patientsGrid = document.getElementById('patients-grid');
+
+                // Loop through each patient and create HTML structure
+                data.forEach(patient => {
+                    // Create a div for the patient card
+                    const patientCard = document.createElement('div');
+                    patientCard.classList.add('patient-card');
+
+                    // Add click event to go to patient details
+                    patientCard.onclick = function() {
+                        window.location.href = `patient_details.html?id=${patient.id}`;
+                    };
+
+                    // Create an img element for the patient's profile picture
+                    const patientImg = document.createElement('img');
+                    patientImg.src = patient.profile_image || 'Images/default-avatar.png';  // Default image if not available
+                    patientImg.alt = `${patient.name}'s profile picture`;
+                    patientImg.classList.add('patient-avatar');  // Add class for styling
+
+                    // Add patient name
+                    const patientName = document.createElement('h3');
+                    patientName.textContent = patient.name;
+
+                    // Append the image and name to the card
+                    patientCard.appendChild(patientImg);
+                    patientCard.appendChild(patientName);
+
+                    // Append the card to the grid
+                    patientsGrid.appendChild(patientCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching the patient data:', error);
+            });
+    </script>
 </body>
 </html>

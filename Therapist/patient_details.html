@@ -6,7 +6,6 @@
     <title>Patient Details</title>
     <link rel="stylesheet" href="styles/patient_details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
     <!-- Navbar -->
@@ -28,9 +27,8 @@
         </div>
         <div class="profile-icon">
             <a href="therapistProfile.html">
-            <img src="Images/profile-icon.png" alt="Profile">
-        </a>
-            
+                <img src="Images/profile-icon.png" alt="Profile">
+            </a>
         </div>
     </div>
 
@@ -47,7 +45,7 @@
             <p><strong>Sleeping Schedule:</strong> <span id="sleeping-schedule">--</span></p>
             <p><strong>Weight:</strong> <span id="weight">--</span></p>
             <p><strong>State of Mind:</strong> <span id="state-of-mind">--</span></p>
-            <p><strong>Other:</strong> <span id="other-info">--</span></p>
+            <p><strong>Other Issues:</strong> <span id="other-info">--</span></p>
         </div>
 
         <div class="patient-notes-header">
@@ -59,12 +57,11 @@
         <div class="patient-notes">
             <div id="notes-grid" class="notes-grid">
                 <!-- Notes will be dynamically inserted here -->
-            
             </div>
         </div>
     </div>
 
-    <!-- Link the external JavaScript file -->
+    <!-- JavaScript to fetch patient details and notes -->
     <script src="scripts/patient_details.js"></script>
 </body>
 </html>
