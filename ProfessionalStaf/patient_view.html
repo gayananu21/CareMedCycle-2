@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellness Journey</title>
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/patients.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img src="Images/Brian.png" alt="Care Med Logo" />
+        <span class="care">CARE <span class="med">MED</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="patient_view.html">Patients</a>
+        <a href="createsessions.html">Create New Session</a>
+      </div>
+      <div class="profile-icon">
+        <img src="images/profile-icon.png" alt="Profile" />
+      </div>
+    </div>
+    <div class="center">
+      <div class="content">
+        <div class="card">
+          <div class="edit">
+            <button class="edit-button" id="editBtn"><i class="fa-solid fa-pen-to-square"></i></button>
+          </div>
+          <div class="container">
+            <img src="Images/user.jpeg" alt="" class="image" />
+          </div>
+          <div class="container">
+            <span class="name">Dineth</span>
+            <span class="gender">M</span>
+          </div>
+          <div class="">
+            <p class="details">Age 29</p>
+            <p class="details">Height 4'5</p>
+            <p class="details">Wieght 99 kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <form class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+          <h2 class="edit-title">Edit User</h2>
+          <div class="form-field">
+            <label for="title">Name:</label>
+            <input type="text" id="title" placeholder="Name" value="abc" />
+          </div>
+          <div class="form-field">
+            <label for="title">Age:</label>
+            <input type="text" id="title" placeholder="Age" value="abc" />
+          </div>
+          <div class="form-field">
+            <label for="title">Height:</label>
+            <input type="text" id="title" placeholder="Height" value="abc" />
+          </div>
+          <div class="form-field">
+            <label for="title">Weight:</label>
+            <input type="text" id="title" placeholder="Weight" value="abc" />
+          </div>
+        </div>
+
+        <div class="modal-footer"><button class="save-button">Save</button></div>
+    </form>
+    </div>
+
+    <script src="scripts/modal.js"></script>
+  </body>
+</html>

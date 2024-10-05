@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Session</title>
+    <link rel="stylesheet" href="styles/createSession.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="Images/Brian.png" alt="Care Med Logo" />
+        <span class="care">CARE <span class="med">MED</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="patient_view.html">Patients</a>
+        <a href="createsessions.html">Create New Session</a>
+      </div>
+      <div class="profile-icon">
+        <img src="Images/profile-icon.png" alt="Profile" />
+      </div>
+    </div>
+
+    <!-- Create Session Form -->
+    <div class="edit-session-container">
+      <!-- Left Form Section -->
+      <div class="edit-session-form">
+        <h1>Create New Session</h1>
+
+        <!-- Form fields for session details -->
+        <div class="form-field">
+          <label for="title">Title:</label>
+          <input type="text" id="title" placeholder="Enter session title" />
+        </div>
+
+        <div class="form-field">
+          <label for="date">Date:</label>
+          <input type="date" id="date" />
+        </div>
+
+        <div class="form-field">
+          <label for="time">Time:</label>
+          <input type="time" id="time-start" /> to <input type="time" id="time-end" />
+        </div>
+
+        <div class="form-field">
+          <label for="location">Location:</label>
+          <input type="text" id="location" placeholder="Enter location" />
+        </div>
+
+        <!-- Selected patients section starts empty -->
+        <div class="form-field selected-patients-field">
+          <label>Patients:</label>
+          <div id="selected-patients" class="selected-patients">
+            <!-- Initially, no patients here. Patients will be added by dragging from the right side. -->
+          </div>
+        </div>
+
+        <div class="form-field selected-therapists-field">
+          <label>Therapists:</label>
+          <div id="selected-therapists" class="selected-therapists">
+            <!-- Initially, no patients here. Patients will be added by dragging from the right side. -->
+          </div>
+        </div>
+
+        <!-- <div>Hello</div> -->
+
+        <!-- Buttons for save and cancel -->
+        <div class="form-actions">
+          <button class="save-btn" id="save-session">Save</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Right Side "Add More Patients" Section -->
+      <div class="add-more-patients-section">
+        <h2>Add More Patients</h2>
+        <div id="available-patients" class="available-patients">
+          <!-- Patients available for dragging -->
+          <div class="patient" draggable="true" data-id="1">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient1.png" alt="Patient 1" />
+            <span>Patient 1</span>
+          </div>
+          <div class="patient" draggable="true" data-id="2">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient2.png" alt="Patient 2" />
+            <span>Patient 2</span>
+          </div>
+          <div class="patient" draggable="true" data-id="3">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient3.png" alt="Patient 3" />
+            <span>Patient 3</span>
+          </div>
+          <div class="patient" draggable="true" data-id="4">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient4.png" alt="Patient 4" />
+            <span>Patient 4</span>
+          </div>
+
+          <div class="patient" draggable="true" data-id="5">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient1.png" alt="Patient 1" />
+            <span>Patient 5</span>
+          </div>
+          <div class="patient" draggable="true" data-id="6">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient2.png" alt="Patient 2" />
+            <span>Patient 6</span>
+          </div>
+          <div class="patient" draggable="true" data-id="7">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient3.png" alt="Patient 3" />
+            <span>Patient 7</span>
+          </div>
+          <div class="patient" draggable="true" data-id="8">
+            <i class="fas fa-plus-circle add-icon-patient"></i>
+            <img src="Images/patientImages/patient4.png" alt="Patient 4" />
+            <span>Patient 8</span>
+          </div>
+          <!-- Add more patients here as necessary -->
+        </div>
+
+        <h2>Add More Therapists</h2>
+        <div id="available-therapists" class="available-therapists">
+          <!-- Patients available for dragging -->
+          <div class="therapist" draggable="true" data-id="1">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist1.png" alt="Therapist 1" />
+            <span>Therapist 1</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="2">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist2.png" alt="Therapist 2" />
+            <span>Therapist 2</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="3">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist3.png" alt="Therapist 3" />
+            <span>Therapist 3</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="4">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist4.png" alt="Therapist 4" />
+            <span>Therapist 4</span>
+          </div>
+
+          <div class="therapist" draggable="true" data-id="5">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist5.png" alt="Therapist 1" />
+            <span>Therapist 5</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="6">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist6.png" alt="Therapist 2" />
+            <span>Therapist 6</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="7">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist7.png" alt="Therapist 3" />
+            <span>Therapist 7</span>
+          </div>
+          <div class="therapist" draggable="true" data-id="8">
+            <i class="fas fa-plus-circle add-icon-therapist"></i>
+            <img src="Images/therapistImages/therapist8.png" alt="Therapist 4" />
+            <span>Therapist 8</span>
+          </div>
+          <!-- Add more patients here as necessary -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Confirmation Popup -->
+    <div id="save-popup" class="popup hidden">
+      <p>Do you want to save changes?</p>
+      <div class="popup-actions">
+        <button id="save-no-btn">No</button>
+        <button id="save-yes-btn">Yes</button>
+      </div>
+    </div>
+
+    <!-- Cancel Confirmation Popup -->
+    <div id="cancel-popup" class="popup hidden">
+      <p>Do you want to cancel creating this session?</p>
+      <div class="popup-actions">
+        <button id="cancel-no-btn">No</button>
+        <button id="cancel-yes-btn">Yes</button>
+      </div>
+    </div>
+
+    <script src="scripts/createSession.js"></script>
+  </body>
+</html>
