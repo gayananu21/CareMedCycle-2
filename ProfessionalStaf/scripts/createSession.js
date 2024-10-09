@@ -172,49 +172,57 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Save button with confirmation and alert bar navigation
-  const saveButton = document.querySelector(".save-btn");
-  saveButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const confirmSave = confirm("Do you want to save changes?");
-    if (confirmSave) {
-      alert("Session created successfully!");
-      window.location.href = "upcomingSessions.html"; // Redirect to upcoming sessions
-    }
-  });
-});
-// Popup elements
-const savePopup = document.getElementById("save-session");
-const cancelPopup = document.getElementById("cancel-btn");
+  const saveButton = document.querySelector('.save-btn');
+    saveButton.addEventListener('click', (e) => {
+        e.preventDefault();
 
-// Save button click -> Show save confirmation popup
-const saveButton = document.getElementById("save-session");
-saveButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  savePopup.classList.remove("hidden"); // Show popup
+        // Collect form data
+        const sessionData = {
+            title: document.querySelector('#title').value,
+            date: document.querySelector('#date').value,
+            time_start: document.querySelector('#time-start').value,
+            time_end: document.querySelector('#time-end').value,
+            location: document.querySelector('#location').value,
+            patients: Array.from(document.querySelectorAll('#selected-patients .patient')).map(patient => patient.getAttribute('data-id')),
+            therapists: Array.from(document.querySelectorAll('#selected-therapists .therapist')).map(therapist => therapist.getAttribute('data-id'))
+        };
+
+        if (!sessionData.title || !sessionData.date || !sessionData.time_start || !sessionData.time_end || !sessionData.location || sessionData.patients.length === 0) {
+            alert('Please fill all fields and add at least one patient.');
+            return;
+        }
+
+        // Send the data to the backend to save in the database
+        fetch('http://localhost/WWW/ProfessionalStaf/php/add_session.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sessionData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Session created successfully!');
+                window.location.href = 'upcomingSessions.html'; // Redirect to upcoming sessions
+            } else {
+                alert(`Error creating session: ${result.message}` );
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error creating session. Please try again.');
+        });
+    });
+
+    // Cancel button logic
+    const cancelButton = document.querySelector('.cancel-btn');
+    cancelButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const confirmCancel = confirm('Do you want to cancel creating this session?');
+        if (confirmCancel) {
+            window.location.href = 'therapist_home.html'; // Redirect to home
+        }
+    });
 });
 
-// Cancel button click -> Show cancel confirmation popup
-const cancelButton = document.getElementById("cancel-session");
-cancelButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  cancelPopup.classList.remove("hidden"); // Show popup
-});
-
-// Popup actions for saving
-document.getElementById("save-no-btn").addEventListener("click", () => {
-  savePopup.classList.add("hidden");
-});
-
-document.getElementById("save-yes-btn").addEventListener("click", () => {
-  alert("Session saved successfully!");
-  window.location.href = "upcomingSessions.html"; // Redirect to upcoming sessions
-});
-
-// Popup actions for canceling
-document.getElementById("cancel-no-btn").addEventListener("click", () => {
-  cancelPopup.classList.add("hidden");
-});
-
-document.getElementById("cancel-yes-btn").addEventListener("click", () => {
-  window.location.href = "therapist_home.html"; // Redirect to therapist home
-});

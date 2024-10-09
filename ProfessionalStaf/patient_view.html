@@ -19,13 +19,14 @@
         <a href="home.html">Home</a>
         <a href="patient_view.html">Patients</a>
         <a href="createsessions.html">Create New Session</a>
+        <a href="upcomingSessions.html">Upcoming Session</a>
       </div>
       <div class="profile-icon">
         <img src="images/profile-icon.png" alt="Profile" />
       </div>
     </div>
     <div class="center">
-      <div class="content">
+      <div id = "content" class="content">
         <div class="card">
           <div class="edit">
             <button class="edit-button" id="editBtn"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -34,13 +35,13 @@
             <img src="Images/user.jpeg" alt="" class="image" />
           </div>
           <div class="container">
-            <span class="name">Dineth</span>
-            <span class="gender">M</span>
+            <span class="name" id="patientName">Dineth</span>
+            <span class="gender" id="patientGender">M</span>
           </div>
           <div class="">
-            <p class="details">Age 29</p>
-            <p class="details">Height 4'5</p>
-            <p class="details">Wieght 99 kg</p>
+            <p class="details" id="patientAge">Age 29</p>
+            <p class="details" id="patientHeight">Height 4'5</p>
+            <p class="details" id="patientWeight">Weight 99 kg</p>
           </div>
         </div>
       </div>
@@ -54,27 +55,74 @@
         <div>
           <h2 class="edit-title">Edit User</h2>
           <div class="form-field">
-            <label for="title">Name:</label>
-            <input type="text" id="title" placeholder="Name" value="abc" />
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name" value="Dineth" />
           </div>
           <div class="form-field">
-            <label for="title">Age:</label>
-            <input type="text" id="title" placeholder="Age" value="abc" />
+            <label for="age">Age:</label>
+            <input type="text" id="age" placeholder="Age" value="29" />
           </div>
           <div class="form-field">
-            <label for="title">Height:</label>
-            <input type="text" id="title" placeholder="Height" value="abc" />
+            <label for="height">Height:</label>
+            <input type="text" id="height" placeholder="Height" value="4'5" />
           </div>
           <div class="form-field">
-            <label for="title">Weight:</label>
-            <input type="text" id="title" placeholder="Weight" value="abc" />
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" placeholder="Weight" value="99" />
           </div>
         </div>
-
-        <div class="modal-footer"><button class="save-button">Save</button></div>
-    </form>
+        <div class="modal-footer"><button type="button" class="save-button" id="saveBtn">Save</button></div>
+      </form>
     </div>
 
-    <script src="scripts/modal.js"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("editBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Get the save button and patient details
+      var saveBtn = document.getElementById("saveBtn");
+
+      // When the user clicks the save button, update the details
+      saveBtn.onclick = function() {
+        // Get input values from the form
+        var newName = document.getElementById("name").value;
+        var newAge = document.getElementById("age").value;
+        var newHeight = document.getElementById("height").value;
+        var newWeight = document.getElementById("weight").value;
+
+        // Update the patient details in the main content
+        document.getElementById("patientName").textContent = newName;
+        document.getElementById("patientAge").textContent = "Age " + newAge;
+        document.getElementById("patientHeight").textContent = "Height " + newHeight;
+        document.getElementById("patientWeight").textContent = "Weight " + newWeight + " kg";
+
+        // Close the modal
+        modal.style.display = "none";
+      }
+    </script>
+   <script src="scripts/getpatients.js"> </script>
   </body>
 </html>

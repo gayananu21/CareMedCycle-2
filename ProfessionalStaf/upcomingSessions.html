@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaRe Med - Home</title>
-    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="StyleSheet/navbar.css">
-    <link rel="stylesheet" href="StyleSheet/patients.css">
+    <title>Upcoming Sessions</title>
+    <link rel="stylesheet" href="styles/upcomingSessions.css">
+    <!-- Font Awesome for edit icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+    <!-- Navbar (reuse from previous pages) -->
     <div class="navbar">
         <div class="logo">
             <img src="Images/Brian.png" alt="Care Med Logo">
@@ -26,10 +27,15 @@
         </div>
     </div>
 
-    <div class="welcome-section">
-        <h1>Welcome<br><span>"Lisa Firestone"</span></h1>
-        <p></p>
-    </div> <!-- Closing welcome-section div -->
+    <!-- Upcoming Sessions Section -->
+    <div class="upcoming-sessions-section">
+        <h1>Upcoming Sessions</h1>
+        <div class="sessions-grid">
+            <!-- Session cards will be dynamically inserted here via JavaScript -->
+        </div>
+    </div>
 
+    <!-- Link to external JavaScript file -->
+    <script src="scripts/upcomingSessions.js"></script>
 </body>
 </html>

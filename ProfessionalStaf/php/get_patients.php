@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to fetch all patients
-$sql = "SELECT id, name, weight, eating_habits, sleeping_schedule, state_of_mind, other_issues, profile_image FROM patients";
+$sql = "SELECT id, name, weight, eating_habits, sleeping_schedule, state_of_mind, other_issues, profile_image, age FROM patients";
 $result = $conn->query($sql);
 
 $patients = [];
